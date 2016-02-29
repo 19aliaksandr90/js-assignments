@@ -10,7 +10,7 @@ describe('06-conditions-n-loops-tasks', function() {
         [
             1, 2, 4, 7, 8, 11, 13, 14, 16, 17, 19, 22, 23, 26, 28, 29, 31, 32, 34,
            37, 38, 41, 43, 44, 47, 49, 52, 53, 56, 58, 59, 61, 62, 64, 67, 68, 71,
-           73, 74, 76, 77, 79, 82, 83, 86, 88, 89, 91, 92, 94, 97, 98   
+           73, 74, 76, 77, 79, 82, 83, 86, 88, 89, 91, 92, 94, 97, 98
         ].forEach(num => {
             var actual = tasks.getFizzBuzz(num);
             assert.equal(
@@ -19,12 +19,12 @@ describe('06-conditions-n-loops-tasks', function() {
                 `getFizzBuzz shoud return ${num} for ${num}, but actually ${actual}`
             )
         });
-        
+
         [
-            3,  6,  9, 12, 18, 21, 24, 27, 
-           33, 36, 39, 42, 48, 51, 54, 57, 
+            3,  6,  9, 12, 18, 21, 24, 27,
+           33, 36, 39, 42, 48, 51, 54, 57,
            63, 66, 69, 72, 78, 81, 84, 87,
-           93, 96, 99               
+           93, 96, 99
         ].forEach(num => {
             var actual = tasks.getFizzBuzz(num);
             assert.equal(
@@ -55,10 +55,10 @@ describe('06-conditions-n-loops-tasks', function() {
                 `getFizzBuzz shoud return 'FizzBuzz' for ${num}, but actually ${actual}`
             )
         });
-        
+
     });
 
-    
+
     it.optional('getFactorial should return the functorial of given number', () => {
         [
             { n:  1, expected:       1 },
@@ -73,8 +73,8 @@ describe('06-conditions-n-loops-tasks', function() {
             )
         });
     });
-    
-     
+
+
     it.optional('getSumBetweenNumbers should return the sum inside the specified interval', () => {
         [
             { n1:  1, n2:  2, expected:  3 },
@@ -105,8 +105,8 @@ describe('06-conditions-n-loops-tasks', function() {
             )
         });
     });
-     
-     
+
+
     it.optional('reverseString should return the specified string in reverse order', () => {
         [
             { str: 'The quick brown fox jumps over the lazy dog', expected: 'god yzal eht revo spmuj xof nworb kciuq ehT' },
@@ -145,7 +145,7 @@ describe('06-conditions-n-loops-tasks', function() {
         [
             79927398713,
             4012888888881881,
-            5123456789012346, 
+            5123456789012346,
             378282246310005,
             371449635398431,
             378734493671000,
@@ -212,35 +212,35 @@ describe('06-conditions-n-loops-tasks', function() {
 
 
     it.optional('getIntervalString should return the string representation of math interval', () => {
-        [   
+        [
             {
-                a: 0, 
-                b: 1, 
-                isStartIncluded: true, 
+                a: 0,
+                b: 1,
+                isStartIncluded: true,
                 isEndIncluded: true,
                 expected: '[0, 1]'
             },{
-                a: 0, 
-                b: 1, 
-                isStartIncluded: true, 
+                a: 0,
+                b: 1,
+                isStartIncluded: true,
                 isEndIncluded: false,
                 expected: '[0, 1)'
             },{
-                a: 0, 
-                b: 1, 
-                isStartIncluded: false, 
+                a: 0,
+                b: 1,
+                isStartIncluded: false,
                 isEndIncluded: true,
                 expected: '(0, 1]'
             },{
-                a: 0, 
-                b: 1, 
-                isStartIncluded: false, 
+                a: 0,
+                b: 1,
+                isStartIncluded: false,
                 isEndIncluded: false,
                 expected: '(0, 1)'
             },{
-                a: 5, 
-                b: 3, 
-                isStartIncluded: true, 
+                a: 5,
+                b: 3,
+                isStartIncluded: true,
                 isEndIncluded: true,
                 expected: '[3, 5]'
             }
@@ -276,22 +276,22 @@ describe('06-conditions-n-loops-tasks', function() {
             )
         });
     });
-     
+
 
     it.optional('getCommonDirectoryPath should return the n-ary string representation of number', () => {
         [
-            { 
-                pathes: ['/web/images/image1.png', '/web/images/image2.png'],  
-                expected: '/web/images/' 
-            },{ 
-                pathes: ['/web/assets/style.css', '/web/scripts/app.js',  'home/setting.conf'],  
-                expected: '' 
-            },{ 
-                pathes:  ['/web/assets/style.css', '/.bin/mocha',  '/read.me'],  
-                expected: '/' 
-            },{ 
-                pathes:  ['/web/favicon.ico', '/web-scripts/dump', '/webalizer/logs'],  
-                expected: '/' 
+            {
+                pathes: ['/web/images/image1.png', '/web/images/image2.png'],
+                expected: '/web/images/'
+            },{
+                pathes: ['/web/assets/style.css', '/web/scripts/app.js',  'home/setting.conf'],
+                expected: ''
+            },{
+                pathes:  ['/web/assets/style.css', '/.bin/mocha',  '/read.me'],
+                expected: '/'
+            },{
+                pathes:  ['/web/favicon.ico', '/web-scripts/dump', '/webalizer/logs'],
+                expected: '/'
             }
         ].forEach(data => {
             var actual = tasks.getCommonDirectoryPath(data.pathes, data.n);
@@ -306,12 +306,12 @@ describe('06-conditions-n-loops-tasks', function() {
 
     it.optional('getMatrixProduct should return the product of two specified matrices', () => {
         [
-            { 
+            {
                 m1: [
                     [ 1, 0, 0 ],
                     [ 0, 1, 0 ],
                     [ 0, 0, 1 ]
-                ],  
+                ],
                 m2: [
                     [ 1, 2, 3 ],
                     [ 4, 5, 6 ],
@@ -321,10 +321,10 @@ describe('06-conditions-n-loops-tasks', function() {
                     [ 1, 2, 3 ],
                     [ 4, 5, 6 ],
                     [ 7, 8, 9 ]
-                ] 
+                ]
             },{
                 m1: [
-                    [ 1, 2, 3]              
+                    [ 1, 2, 3]
                 ],
                 m2: [
                     [ 4 ],
@@ -345,134 +345,134 @@ describe('06-conditions-n-loops-tasks', function() {
 
 
     it.optional('timespanToHumanString should return the human string representation of datetime period', () => {
-        [   
+        [
             {
-                startDate: '2000-01-01 01:00:00.100', 
-                endDate:   '2000-01-01 01:00:00.200', 
+                startDate: '2000-01-01 01:00:00.100',
+                endDate:   '2000-01-01 01:00:00.200',
                 expected:  'a few seconds ago'
             }, {
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 01:00:30.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 01:00:30.000',
                 expected:  'a few seconds ago'
             }, {
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 01:00:45.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 01:00:45.000',
                 expected:  'a few seconds ago'
             }, {
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 01:00:45.001', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 01:00:45.001',
                 expected:  'a minute ago'
             }, {
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 01:01:00.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 01:01:00.000',
                 expected:  'a minute ago'
             }, {
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 01:01:30.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 01:01:30.000',
                 expected:  'a minute ago'
             }, {
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 01:01:30.001', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 01:01:30.001',
                 expected:  '2 minutes ago'
             }, {
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 01:05:30.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 01:05:30.000',
                 expected:  '5 minutes ago'
             },{
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 01:45:00.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 01:45:00.000',
                 expected:  '45 minutes ago'
             },{
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 01:45:00.001', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 01:45:00.001',
                 expected:  'an hour ago'
             },{
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 02:00:00.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 02:00:00.000',
                 expected:  'an hour ago'
             },{
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 02:30:00.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 02:30:00.000',
                 expected:  'an hour ago'
             },{
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 02:30:00.001', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 02:30:00.001',
                 expected:  '2 hours ago'
             },{
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 05:30:00.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 05:30:00.000',
                 expected:  '4 hours ago'
             },{
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 05:30:00.001', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 05:30:00.001',
                 expected:  '5 hours ago'
             },{
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 23:00:00.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 23:00:00.000',
                 expected:  '22 hours ago'
             },{
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-01 23:00:00.001', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-01 23:00:00.001',
                 expected:  'a day ago'
             },{
-                startDate: '2000-01-01 01:00:00.000', 
-                endDate:   '2000-01-02 01:00:00.000', 
+                startDate: '2000-01-01 01:00:00.000',
+                endDate:   '2000-01-02 01:00:00.000',
                 expected:  'a day ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-01-02 12:00:00.000', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-01-02 12:00:00.000',
                 expected:  'a day ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-01-02 12:00:00.001', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-01-02 12:00:00.001',
                 expected:  '2 days ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-01-05 12:00:00.000', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-01-05 12:00:00.000',
                 expected:  '4 days ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-01-26 00:00:00.000', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-01-26 00:00:00.000',
                 expected:  '25 days ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-01-26 00:00:00.001', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-01-26 00:00:00.001',
                 expected:  'a month ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-02-01 00:00:00.000', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-02-01 00:00:00.000',
                 expected:  'a month ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-02-15 00:00:00.000', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-02-15 00:00:00.000',
                 expected:  'a month ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-02-16 00:00:00.000', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-02-16 00:00:00.000',
                 expected:  '2 months ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-05-20 00:00:00.000', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-05-20 00:00:00.000',
                 expected:  '5 months ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-12-10 00:00:00.000', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-12-10 00:00:00.000',
                 expected:  '11 months ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2000-12-12 00:00:00.000', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2000-12-12 00:00:00.000',
                 expected:  'an year ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2001-02-15 00:00:00.001', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2001-02-15 00:00:00.001',
                 expected:  'an year ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2001-06-01 00:00:00.001', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2001-06-01 00:00:00.001',
                 expected:  'an year ago'
             },{
-                startDate: '2000-01-01 00:00:00.000', 
-                endDate:   '2015-02-15 00:00:00.001', 
+                startDate: '2000-01-01 00:00:00.000',
+                endDate:   '2015-02-15 00:00:00.001',
                 expected:  '15 years ago'
             }
         ].forEach(data => {
@@ -501,7 +501,7 @@ describe('06-conditions-n-loops-tasks', function() {
             result+='-------------';
             return result;
         }
-        
+
         [[
             [ X, X, X ],
             [ O, O,   ],
@@ -543,7 +543,7 @@ describe('06-conditions-n-loops-tasks', function() {
                 `Position: \n${positionToSting(data)}\n  The winner is X, but actually '${actual}'`
             )
         });
-        
+
         [[
             [ O, O, O ],
             [  , X, X ],
@@ -616,5 +616,5 @@ describe('06-conditions-n-loops-tasks', function() {
             )
         });
     });
-          
+
 });

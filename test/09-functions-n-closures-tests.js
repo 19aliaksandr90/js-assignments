@@ -5,7 +5,7 @@ var tasks = require('../task/09-functions-n-closures-tasks');
 it.optional = require('../extensions/it-optional');
 
 describe('09-functions-n-closures-tasks', function() {
-    
+
     it.optional('getComposition should return the composition of two functions', () => {
         [
             { f:  Math.sin, g: Math.asin, arg: 0,  result: 0 },
@@ -19,14 +19,14 @@ describe('09-functions-n-closures-tasks', function() {
         });
     });
 
-    
+
     it.optional('getPowerFunction should return the math power function using the specified exponent', () => {
-        
+
         var power2 = tasks.getPowerFunction(2);
         for(var i=0; i<10; i++) {
             assert.equal(power2(i), Math.pow(i,2));
         }
-        
+
         var power05 = tasks.getPowerFunction(0.5);
         for(var i=0; i<10; i++) {
             assert.equal(power05(i), Math.pow(i, 0.5));
@@ -36,15 +36,15 @@ describe('09-functions-n-closures-tasks', function() {
 
     it.optional('getPolynom should return the polynom with specified coefficients', () => {
         [
-            { 
-                polynom: tasks.getPolynom(2,3,5), 
-                results: [ {x: 0, y: 5},  {x: 2, y: 19}, {x: 3, y: 32} ] 
-            },{ 
-                polynom: tasks.getPolynom(1,-3),  
-                results: [ {x:0, y: -3}, {x:2, y: -1}, {x:5, y:2} ] 
-            },{ 
-                polynom: tasks.getPolynom(8),     
-                results: [ {x:0, y:8},  {x:2, y:8},  {x:5, y:8} ] 
+            {
+                polynom: tasks.getPolynom(2,3,5),
+                results: [ {x: 0, y: 5},  {x: 2, y: 19}, {x: 3, y: 32} ]
+            },{
+                polynom: tasks.getPolynom(1,-3),
+                results: [ {x:0, y: -3}, {x:2, y: -1}, {x:5, y:2} ]
+            },{
+                polynom: tasks.getPolynom(8),
+                results: [ {x:0, y:8},  {x:2, y:8},  {x:5, y:8} ]
             }
         ].forEach(data => {
             data.results.forEach(test => {
@@ -77,12 +77,12 @@ describe('09-functions-n-closures-tasks', function() {
         var maxAttemps = 3;
         var attemps = 0;
         var expected = 'expected';
-        
+
         var fn = function() {
             if (attemps++<maxAttemps) throw new Error();
             return expected;
         }
-        
+
         var actual = tasks.retry(fn, maxAttemps)();
         assert.equal(actual, expected);
     });
@@ -90,15 +90,15 @@ describe('09-functions-n-closures-tasks', function() {
 
     it.optional('logger method should log start and end of call of the standard js function', () => {
         var log = '';
-        
+
         var logFunc = (text) => ( log += text + '\n');
         var cosLogger = tasks.logger(Math.cos, logFunc);
-        
+
         var actual = cosLogger(Math.PI);
 
         assert.equal(actual, -1, 'logger function should return the original result from specified function');
         assert.equal(
-            log, 
+            log,
             'cos(3.141592653589793) starts\n'
            +'cos(3.141592653589793) ends\n',
             'logger function shoud log the start and end of the specified function');
@@ -108,26 +108,26 @@ describe('09-functions-n-closures-tasks', function() {
     it.optional('logger method should log start and end of call of the specified function', () => {
         var isCalling = false;
         var log = '';
-        
+
         var fn = function testLogger(param, index) {
             assert.equal(
-                log, 
+                log,
                 'testLogger(["expected","test",1],0) starts\n',
                 'logger function shoud log the start of specified function before calling'
             );
             isCalling = true;
-            return param[index]; 
+            return param[index];
         }
 
         var logFunc = (text) => ( log += text + '\n');
         var logger = tasks.logger(fn, logFunc);
-        
+
         var actual = logger(["expected", "test", 1], 0);
 
-        assert.equal(isCalling, true, 'logger function should call the specified function');        
+        assert.equal(isCalling, true, 'logger function should call the specified function');
         assert.equal(actual, 'expected', 'logger function should return the original result from specified function');
         assert.equal(
-            log, 
+            log,
             'testLogger(["expected","test",1],0) starts\n'
            +'testLogger(["expected","test",1],0) ends\n',
             'logger function shoud log the end of specified function after calling');
@@ -136,22 +136,22 @@ describe('09-functions-n-closures-tasks', function() {
 
     it.optional('partialUsingArguments should return the function with partial applied arguments', () => {
         const fn = (x1,x2,x3,x4) => x1+x2+x3+x4;
-        assert.equal( 
+        assert.equal(
             tasks.partialUsingArguments(fn, 'a')('b','c','d'),
             'abcd',
             "partialUsingArguments(fn, 'a')('b','c','d')' should return 'abcd'"
         );
-        assert.equal( 
+        assert.equal(
             tasks.partialUsingArguments(fn, 'a','b')('c','d'),
             'abcd',
             "partialUsingArguments(fn, 'a','b')('c','d')' should return 'abcd'"
         );
-        assert.equal( 
+        assert.equal(
             tasks.partialUsingArguments(fn, 'a','b','c')('d'),
             'abcd',
             "partialUsingArguments(fn, 'a','b','c')('d') should return 'abcd'"
         );
-        assert.equal( 
+        assert.equal(
             tasks.partialUsingArguments(fn, 'a','b','c','d')(),
             'abcd',
             "partialUsingArguments(fn, 'a','b','c','d')()' should return 'abcd'"
@@ -160,12 +160,12 @@ describe('09-functions-n-closures-tasks', function() {
 
 
     it.optional('getIdGeneratorFunction should return the id generator function', () => {
-        
+
         var f0 = tasks.getIdGeneratorFunction(0);
         for(var i=0; i<1000; i++) {
             assert.equal(f0(), i);
         }
-        
+
         var f10 = tasks.getIdGeneratorFunction(10);
         var f20 = tasks.getIdGeneratorFunction(20);
         for(var i=0; i<1000; i++) {
@@ -173,5 +173,5 @@ describe('09-functions-n-closures-tasks', function() {
             assert.equal(f20(), 20+i);
         }
     });
-    
+
 });

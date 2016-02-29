@@ -8,7 +8,7 @@ describe('05-regex-tasks', function() {
 
     it.optional('getRegexForGuid should match the valid GUID', function () {
         var result = tasks.getRegexForGuid();
-      
+
         [
             '{3F2504E0-4F89-41D3-9A0C-0305E82C3301}',
             '{21EC2020-3AEA-4069-A2DD-08002B30309D}',
@@ -19,7 +19,7 @@ describe('05-regex-tasks', function() {
                 `regex does not match '${str}'`
             );
         });
-      
+
         [
             '{D44EF4F4-280B47E5-91C7-261222A59621}',
             '{D1A5279D-B27D-4CD4-A05E-EFDH53D08E8D}',
@@ -39,14 +39,14 @@ describe('05-regex-tasks', function() {
 
     it.optional('getRegexForPitSpot should be implemeted according to task', function () {
         var result = tasks.getRegexForPitSpot();
-      
+
         [ 'pit', 'spot', 'spate', 'slap two', 'respite' ].forEach((str) => {
             assert(
                 result.test(str),
                 `regex does not match '${str}'`
             );
         });
-      
+
         [ ' pt', 'Pot', 'peat', 'part' ].forEach((str) => {
             assert(
                 result.test(str) == false,
@@ -59,11 +59,11 @@ describe('05-regex-tasks', function() {
             `regexp length should be < 13, actual ${result.source.length} `
         );
     });
-    
+
 
     it.optional('getRegexForIPv4 should match the valid IPv4', function () {
         var result = tasks.getRegexForIPv4();
-      
+
         [
             '0.0.0.0',
             '127.0.0.1',
@@ -76,7 +76,7 @@ describe('05-regex-tasks', function() {
                 `regex does not match '${str}'`
             );
         });
-      
+
         [
             '300.0.0.0',
             '127.0.0.-1',
@@ -93,7 +93,7 @@ describe('05-regex-tasks', function() {
 
     it.optional('getRegexForSSN should match the valid SSN', function () {
         var result = tasks.getRegexForSSN();
-      
+
         [
             '123-45-6789',
             '234-56-2349',
@@ -105,7 +105,7 @@ describe('05-regex-tasks', function() {
                 `regex does not match '${str}'`
             );
         });
-      
+
         [
             '123456789',
             '000-56-2349',
@@ -124,7 +124,7 @@ describe('05-regex-tasks', function() {
 
     it.optional('getPasswordValidator should return the password validator', function () {
         var result = tasks.getPasswordValidator(6);
-      
+
         [
             'password',
             'PASSWORD',
@@ -139,7 +139,7 @@ describe('05-regex-tasks', function() {
                 `Regex matches '${str}'`
             );
         });
-      
+
         [
             'PA55word',
             'passW0rd',
