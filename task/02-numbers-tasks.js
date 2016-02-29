@@ -14,14 +14,14 @@
  * Returns a square of a rectangle given by width and heigth.
  *
  * @param {numder} width
- * @param {number} heigth
+ * @param {number} height
  * @return {number}
  * 
  * @example:
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectagleSquare(width, heigth) {
+function getRectagleSquare(width, height) {
    throw new Error('Not implemented');
 }
 
