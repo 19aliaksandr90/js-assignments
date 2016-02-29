@@ -119,8 +119,8 @@ function repeatString(value, count) {
 }
 
 /**
- * Remove all occurances of string inside another string
- *
+ * Remove all occurrences of string inside another string
+ * 
  * @param {string} str
  * @param {string} value
  * @return {string}
@@ -158,7 +158,7 @@ function unbracketTag(str) {
  *
  * @example
  *   'Thunderstruck' => 'THUNDERSTRUCK'
-  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+ *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
     throw new Error('Not implemented');
