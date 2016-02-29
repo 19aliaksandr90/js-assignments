@@ -6,6 +6,8 @@ Yet another javascript assingments. There are a lot of interactive javascript re
 
 Another idea is to prepare assignment to cover all standard javascript functions, to drilling and mastering skills. Some tasks are practical, but some tasks are rather synthetic.  
 
+And the last idea is to inure trainees to work using unit test and feel unconfortable when programming without tests.
+
 To start javascript assignments please follow the next steps:
 *  [Fork this repo](#user-content-how-to-fork-this-repo) 
 *  [Setup travis-ci to test the commits](#user-content-how-to-setup-travis-ci)
