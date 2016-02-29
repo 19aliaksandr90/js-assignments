@@ -35,7 +35,7 @@ To start javascript assignments please follow the next steps:
 ### How to setup work environment
 * Download and install the latest [Nodejs](https://nodejs.org/en/download/stable/).
 * Run `npm install` from you repository folder to download the required modules. All dependent modules will be located in the  *node_modules* folder.
-* Open your favovire editor and complete tasks.
+* Open your favorite editor and complete tasks.
 * Open your terminal and use `npm test` command to run all tests. You can run single file by passing it as argument `npm test ./test/01-strings-tests.js`.
 * The local repo folder has the following structure: <pre>
     node_modules - app dependences restored by `npm install` command, you can delete this folder and restore later again.
