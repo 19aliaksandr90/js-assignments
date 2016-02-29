@@ -7,7 +7,7 @@
     "test-debug": "./node_modules/.bin/mocha --debug-brk"
   },
   "author": "aorgish",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "mocha": "^2.3.4"
   }
