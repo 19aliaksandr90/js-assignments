@@ -1,0 +1,14 @@
+{
+  "name": "js-training",
+  "version": "0.9.1",
+  "description": "JS training tasks",
+  "scripts": {
+    "test": "mocha",
+    "test-debug": "mocha --debug-brk"
+  },
+  "author": "aorgish",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
+}
