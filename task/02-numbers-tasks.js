@@ -16,7 +16,7 @@
  * @param {numder} width
  * @param {number} heigth
  * @return {number}
- * 
+ *
  * @example:
  *   5, 10 => 50
  *   5, 5  => 25
@@ -31,7 +31,7 @@ function getRectagleSquare(width, heigth) {
  *
  * @param {number} radius
  * @return {number}
- * 
+ *
  * @example:
  *   5    => 31.41592653589793
  *   3.14 => 19.729201864543903
@@ -47,7 +47,7 @@ function getCicleCircumference(radius) {
  * @param {numder} value1
  * @param {number} value2
  * @return {number}
- * 
+ *
  * @example:
  *   5, 5  => 5
  *  10, 0  => 5
@@ -64,14 +64,14 @@ function getAverage(value1, value2) {
  * @param {number} y1
  * @param {number} x2
  * @param {number} y2
- * 
+ *
  * @return {number}
- * 
+ *
  * @example:
  *   (0,0) (0,1)    => 1
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
- */ 
+ */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
    throw new Error('Not implemented');
 }
@@ -82,12 +82,12 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  * @param {number} a
  * @param {number} b
  * @return {number}
- * 
+ *
  * @example:
  *   5*x - 10 = 0    => 2
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
- */ 
+ */
 function getLinearEquationRoot(a, b) {
    throw new Error('Not implemented');
 }
@@ -96,20 +96,20 @@ function getLinearEquationRoot(a, b) {
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi, coordinates in Cartesian plane
  * See details https://en.wikipedia.org/wiki/Euclidean_vector#Representations
- * 
+ *
  * @param {number} x1
  * @param {number} y1
  * @param {number} x2
  * @param {number} y2
  * @return {number}
- * 
+ *
  * @example:
  *   (1,0) (0,1)     => π/2
  *   (0,1) (0,-1)    => -π
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
- */ 
+ */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
    throw new Error('Not implemented');
 }
@@ -119,13 +119,13 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *
  * @param {number} value
  * @return {number}
- * 
+ *
  * @example:
  *   100     => 0
  *    37     => 7
- *     5     => 5   
+ *     5     => 5
  *     0     => 0
- */ 
+ */
 function getLastDigit(value) {
    throw new Error('Not implemented');
 }
@@ -136,12 +136,12 @@ function getLastDigit(value) {
  *
  * @param {string} value
  * @return {number}
- * 
+ *
  * @example:
  *    '100'     => 100
  *     '37'     => 37
- * '-525.5'     => -525.5   
- */ 
+ * '-525.5'     => -525.5
+ */
 function parseNumberFromString(value) {
    throw new Error('Not implemented');
 }
@@ -153,12 +153,12 @@ function parseNumberFromString(value) {
  * @param {number} b
  * @param {number} c
  * @return {number}
- * 
+ *
  * @example:
  *   1,1,1   => 1.7320508075688772
  *   3,3,3   => 5.196152422706632
- *   1,2,3   => 3.741657386773941   
- */ 
+ *   1,2,3   => 3.741657386773941
+ */
 function getParallelipidedDiagonal(a,b,c) {
    throw new Error('Not implemented');
 }

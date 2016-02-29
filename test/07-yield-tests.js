@@ -5,7 +5,7 @@ var tasks = require('../task/07-yield-tasks');
 it.optional = require('../extensions/it-optional');
 
 describe('07-yield-tasks', function() {
-    
+
     it.optional('get99BottlesOfBeer should return the sequence of song lyric lines', () => {
 
         var expected = [
@@ -210,7 +210,7 @@ describe('07-yield-tasks', function() {
             'No more bottles of beer on the wall, no more bottles of beer.',
             'Go to the store and buy some more, 99 bottles of beer on the wall.'
         ];
-        
+
         var lineNo = 0;
         for(let line of tasks.get99BottlesOfBeer()) {
             assert.equal(
@@ -219,10 +219,10 @@ describe('07-yield-tasks', function() {
                 `Text mismatch at line no ${lineNo}: `
             );
         }
-        
+
         assert.equal(
             expected.length,
-            lineNo,  
+            lineNo,
             'Lines count is incorrect:'
         );
     });
@@ -231,11 +231,11 @@ describe('07-yield-tasks', function() {
     it.optional('getFibonacciSequence should return the Fibonacci sequence', () => {
 
         var expected = [
-            0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 
-            6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 
+            0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181,
+            6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269,
             2178309, 3524578, 5702887, 9227465, 14930352, 24157817, 39088169
         ];
-        
+
         var index = 0;
         for(let num of tasks.getFibonacciSequence()) {
             assert.equal(
@@ -248,26 +248,26 @@ describe('07-yield-tasks', function() {
 
     });
 
-     
+
     it.optional('depthTraversalTree should return the sequence of tree nodes in depth-first order', () => {
 
       /*
        *     source tree (root = 1):
-       *    
+       *
        *            1
        *          / | \
        *         2  6  7
-       *        / \     \            =>    { 1, 2, 3, 4, 5, 6, 7, 8 } 
+       *        / \     \            =>    { 1, 2, 3, 4, 5, 6, 7, 8 }
        *       3   4     8
        *           |
-       *           5   
+       *           5
        */
-        
+
         var node1 = { n:1 }, node2 = { n:2 }, node3 = { n:3 }, node4 = { n:4 }, node5 = { n:5 }, node6 = { n:6 }, node7 = { n:7 }, node8 = { n:8 };
         node1.children = [ node2, node6, node7 ];
         node2.children = [ node3, node4 ];
         node4.children = [ node5 ];
-        node7.children = [ node8 ]; 
+        node7.children = [ node8 ];
         var expected = [ node1, node2, node3, node4, node5, node6, node7, node8 ];
         var index = 0;
         for(let num of tasks.depthTraversalTree(node1)) {
@@ -280,25 +280,25 @@ describe('07-yield-tasks', function() {
         }
         if (index<expected.length) assert.fail(index, expected.length,`sequence length should be equal to ${expected.length}`);
     });
-    
+
     const MAX_NODE_COUNT = 100000;
-    
+
     function createDeepTree() {
         var root = { n: MAX_NODE_COUNT };
         for(var i=MAX_NODE_COUNT-1; i>0; i--) {
             root = { n : i, children : [ root ] };
         }
-        return root;        
+        return root;
     }
-     
+
     function createWideTree() {
         var root = { n: 1, children: [] };
         for(var i=2; i<=MAX_NODE_COUNT; i++) {
             root.children.push({ n: i });
         }
-        return root;    
-    } 
-    
+        return root;
+    }
+
     it.optional('depthTraversalTree should process a deep tree', () => {
         var root = createDeepTree();
         var index = 1;
@@ -334,21 +334,21 @@ describe('07-yield-tasks', function() {
 
       /*
        *     source tree (root = 1):
-       *    
+       *
        *            1
        *          / | \
        *         2  3  4
-       *        / \     \            =>    { 1, 2, 3, 4, 5, 6, 7, 8 } 
+       *        / \     \            =>    { 1, 2, 3, 4, 5, 6, 7, 8 }
        *       5   6     7
        *           |
-       *           8   
+       *           8
        */
-        
+
         var node1 = { n:1 }, node2 = { n:2 }, node3 = { n:3 }, node4 = { n:4 }, node5 = { n:5 }, node6 = { n:6 }, node7 = { n:7 }, node8 = { n:8 };
         node1.children = [ node2, node3, node4 ];
         node2.children = [ node5, node6 ];
         node4.children = [ node7 ];
-        node6.children = [ node8 ]; 
+        node6.children = [ node8 ];
         var expected = [ node1, node2, node3, node4, node5, node6, node7, node8 ];
         var index = 0;
         for(let num of tasks.breadthTraversalTree(node1)) {
@@ -393,12 +393,12 @@ describe('07-yield-tasks', function() {
         if (index-1<MAX_NODE_COUNT) assert.fail(index-1, MAX_NODE_COUNT,`sequence length should be equal to ${MAX_NODE_COUNT}`);
     });
 
-   
+
     it.optional('mergeSortedSequences should merge two sorted sequences into one sorted sequence', () => {
-        var odds = function* () { 
+        var odds = function* () {
                for(var i=1; true; i+=2) yield i;
             };
-        var evens = function* () { 
+        var evens = function* () {
                for(var i=2; true; i+=2) yield i;
             };
         var expected = 1;
@@ -409,7 +409,7 @@ describe('07-yield-tasks', function() {
             );
             if (expected>1000) break;
         }
-        
+
         var zero = function* () { yield 0; }
         expected = 0;
         for(let value of tasks.mergeSortedSequences(zero, evens)) {
@@ -432,5 +432,5 @@ describe('07-yield-tasks', function() {
             if (expected>500) break;
         }
 
-    }); 
+    });
 });

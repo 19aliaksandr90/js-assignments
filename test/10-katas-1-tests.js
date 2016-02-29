@@ -5,7 +5,7 @@ var tasks = require('../task/10-katas-1-tasks');
 it.optional = require('../extensions/it-optional');
 
 describe('10-katas-1-tasks', function() {
-    
+
     it.optional('createCompassPoints should return the 32 compass points', () => {
         var expected = [
             { abbreviation : 'N',     azimuth :   0.00 },
@@ -17,22 +17,22 @@ describe('10-katas-1-tasks', function() {
             { abbreviation : 'NEbE',  azimuth :  56.25 },
             { abbreviation : 'ENE',   azimuth :  67.50 },
             { abbreviation : 'EbN',   azimuth :  78.75 },
-            
+
             { abbreviation : 'E',     azimuth :  90.00 },
             { abbreviation : 'EbS',   azimuth : 101.25 },
             { abbreviation : 'ESE',   azimuth : 112.50 },
             { abbreviation : 'SEbE',  azimuth : 123.75 },
-            
+
             { abbreviation : 'SE',    azimuth : 135.00 },
             { abbreviation : 'SEbS',  azimuth : 146.25 },
             { abbreviation : 'SSE',   azimuth : 157.50 },
             { abbreviation : 'SbE',   azimuth : 168.75 },
-            
+
             { abbreviation : 'S',     azimuth : 180.00 },
             { abbreviation : 'SbW',   azimuth : 191.25 },
             { abbreviation : 'SSW',   azimuth : 202.50 },
             { abbreviation : 'SWbS',  azimuth : 213.75 },
-            
+
             { abbreviation : 'SW',    azimuth : 225.00 },
             { abbreviation : 'SWbW',  azimuth : 236.25 },
             { abbreviation : 'WSW',   azimuth : 247.50 },
@@ -49,12 +49,12 @@ describe('10-katas-1-tasks', function() {
             { abbreviation : 'NbW',   azimuth : 348.75 }
 
         ];
-        
+
         assert.deepEqual(
                 tasks.createCompassPoints(),
                 expected
             );
-        
+
     });
 
 
@@ -69,7 +69,7 @@ describe('10-katas-1-tasks', function() {
                     '~/Pictures/*.gif',
                     '~/Pictures/*.jpg',
                     '~/Pictures/*.png'
-               ]           
+               ]
             }, {
                str: 'It{{em,alic}iz,erat}e{d,}, please.',
                result : [
@@ -79,19 +79,19 @@ describe('10-katas-1-tasks', function() {
                     'Itemized, please.',
                     'Iterate, please.',
                     'Iterated, please.'
-               ]           
+               ]
             },{
                str: 'thumbnail.{png,jp{e,}g}',
                result : [
                     'thumbnail.jpeg',
                     'thumbnail.jpg',
                     'thumbnail.png'
-               ]           
+               ]
             },{
                str: 'nothing to do',
                result : [
                     'nothing to do'
-               ]           
+               ]
             }
         ].forEach(data => {
             var actual = Array.from(tasks.expandBraces(data.str));
@@ -113,14 +113,14 @@ describe('10-katas-1-tasks', function() {
                 [ 0, 1 ],
                 [ 2, 3 ]
              ],[
-                [ 0, 1, 5 ],        
-                [ 2, 4, 6 ],                  
-                [ 3, 7, 8 ]                  
+                [ 0, 1, 5 ],
+                [ 2, 4, 6 ],
+                [ 3, 7, 8 ]
              ],[
                 [ 0,  1,  5,  6 ],
                 [ 2,  4,  7, 12 ],
                 [ 3,  8, 11, 13 ],
-                [ 9, 10, 14, 15 ] 
+                [ 9, 10, 14, 15 ]
              ],[
                 [  0,  1,  5,  6, 14 ],
                 [  2,  4,  7, 13, 15 ],
@@ -171,8 +171,8 @@ describe('10-katas-1-tasks', function() {
                 `[${data.join('],[')}] can be arrangement in a row`
             );
         });
-        
-        
+
+
         [
              [
                  [0,1], [2,3]
@@ -189,7 +189,7 @@ describe('10-katas-1-tasks', function() {
                 `[${data.join('],[')}] can't be arrangement in a row`
             );
         });
-        
+
     });
 
 
@@ -197,21 +197,21 @@ describe('10-katas-1-tasks', function() {
         [
             {
                nums:   [ 0, 1, 2, 3, 4, 5 ],
-               result: '0-5'    
+               result: '0-5'
             },{
                nums:   [ 1, 4, 5 ],
-               result: '1,4,5'    
+               result: '1,4,5'
             },{
                nums:   [ 0, 1, 2, 5, 7, 8, 9],
-               result: '0-2,5,7-9'    
+               result: '0-2,5,7-9'
             },{
                nums:   [ 1, 2, 4, 5],
-               result: '1,2,4,5'    
+               result: '1,2,4,5'
             },{
                nums:   [ 0,  1,  2,  4,  6,  7,  8, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
                          25, 27, 28, 29, 30, 31, 32, 33, 35, 36, 37, 38, 39 ],
-               result: '0-2,4,6-8,11,12,14-25,27-33,35-39'    
-            }, 
+               result: '0-2,4,6-8,11,12,14-25,27-33,35-39'
+            },
         ].forEach(data => {
             var actual = tasks.extractRanges(data.nums);
             assert.equal(
@@ -221,5 +221,5 @@ describe('10-katas-1-tasks', function() {
             );
         });
     });
-     
+
 });

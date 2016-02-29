@@ -5,23 +5,23 @@ var tasks = require('../task/01-strings-tasks');
 it.optional = require('../extensions/it-optional');
 
 describe('01-strings-tasks', function() {
-    
+
     it.optional('concatenateStrings should return concatenation of two strings', function() {
         assert.equal('aabb', tasks.concatenateStrings('aa','bb'));
         assert.equal('aa', tasks.concatenateStrings('aa',''));
         assert.equal('bb', tasks.concatenateStrings('','bb'));
     });
-    
+
     it.optional('getStringLength should return the length of string', function() {
         assert.equal(5, tasks.getStringLength('aaaaa'));
         assert.equal(0, tasks.getStringLength(''));
     });
-  
+
     it.optional('getStringFromTemplate should create a string from template using given parameters', function() {
         assert.equal('Hello, John Doe!', tasks.getStringFromTemplate('John','Doe'));
         assert.equal('Hello, Chuck Norris!', tasks.getStringFromTemplate('Chuck','Norris'));
     });
-      
+
     it.optional('getFirstChar should return the first char from given string', function() {
         assert.equal('J', tasks.getFirstChar('John Doe'));
         assert.equal('c', tasks.getFirstChar('cat'));
@@ -31,18 +31,18 @@ describe('01-strings-tasks', function() {
         assert.equal('John Doe', tasks.extractNameFromTemplate('Hello, John Doe!'));
         assert.equal('Chuck Norris', tasks.extractNameFromTemplate('Hello, Chuck Norris!'));
     });
-   
+
     it.optional('removeLeadingAndTrailingWhitespaces should remove leading and trailing whitespaces from the string', function() {
         assert.equal('Abracadabra', tasks.removeLeadingAndTrailingWhitespaces('  Abracadabra'));
         assert.equal('cat', tasks.removeLeadingAndTrailingWhitespaces('cat'));
         assert.equal('Hello, World!', tasks.removeLeadingAndTrailingWhitespaces('\tHello, World! '));
     });
-     
+
     it.optional('repeatString should repeat string specified number of times', function() {
         assert.equal('AAAAA', tasks.repeatString('A', 5));
         assert.equal('catcatcat', tasks.repeatString('cat', 3));
     });
-     
+
     it.optional('removeFirstOccurrences should remove all specified values from a string', function() {
         assert.equal('To be or to be', tasks.removeFirstOccurrences('To be or not to be', ' not'));
         assert.equal('I like legs', tasks.removeFirstOccurrences('I like legends', 'end'));
@@ -62,11 +62,11 @@ describe('01-strings-tasks', function() {
 
     it.optional('extractEmails should convert all chars from specified string into upper case', function() {
         assert.deepEqual(
-            ['angus.young@gmail.com', 'brian.johnson@hotmail.com', 'bon.scott@yahoo.com'], 
+            ['angus.young@gmail.com', 'brian.johnson@hotmail.com', 'bon.scott@yahoo.com'],
             tasks.extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com')
         );
         assert.deepEqual(
-            ['info@gmail.com'], 
+            ['info@gmail.com'],
             tasks.extractEmails('info@gmail.com')
         );
     });
@@ -76,7 +76,7 @@ describe('01-strings-tasks', function() {
            '┌────┐\n'+
            '│    │\n'+
            '│    │\n'+
-           '└────┘\n',      
+           '└────┘\n',
             tasks.getRectangleString(6, 4)
         );
         assert.deepEqual(
@@ -91,17 +91,17 @@ describe('01-strings-tasks', function() {
             tasks.getRectangleString(12, 3)
         );
     });
-    
+
     it.optional('encodeToRot13 should remove all specified values from a string', function() {
         assert.equal('uryyb', tasks.encodeToRot13('hello'));
         assert.equal('Jul qvq gur puvpxra pebff gur ebnq?', tasks.encodeToRot13('Why did the chicken cross the road?'));
         assert.equal('To get to the other side!', tasks.encodeToRot13('Gb trg gb gur bgure fvqr!'));
         assert.equal(
-            'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm', 
+            'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm',
             tasks.encodeToRot13('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz')
         );
     });
-     
+
     it.optional('isString should return true if argument ia a string', function() {
         assert.equal(false, tasks.isString());
         assert.equal(false, tasks.isString(null));

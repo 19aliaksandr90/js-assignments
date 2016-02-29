@@ -5,7 +5,7 @@ var tasks = require('../task/11-katas-2-tasks');
 it.optional = require('../extensions/it-optional');
 
 describe('11-katas-2-tasks', function() {
-    
+
     it.optional('parseBankAccount should return the bank account number from the specified string', () => {
         [
             {
@@ -18,22 +18,22 @@ describe('11-katas-2-tasks', function() {
                         '  |  |  |  |  |  |  |  |  |\n'+
                         '  |  |  |  |  |  |  |  |  |\n',
                 result: 111111111,
- 
+
             },{
                 text:   ' _  _  _  _  _  _  _  _  _ \n'+
                         ' _| _| _| _| _| _| _| _| _|\n'+
                         '|_ |_ |_ |_ |_ |_ |_ |_ |_ \n',
-                result: 222222222 
+                result: 222222222
             },{
                 text:   ' _  _  _  _  _  _  _  _  _ \n'+
                         ' _| _| _| _| _| _| _| _| _|\n'+
                         ' _| _| _| _| _| _| _| _| _|\n',
-                result: 333333333 
+                result: 333333333
             },{
                 text:   '                           \n'+
                         '|_||_||_||_||_||_||_||_||_|\n'+
                         '  |  |  |  |  |  |  |  |  |\n',
-                result: 444444444 
+                result: 444444444
             },{
                 text:   ' _  _  _  _  _  _  _  _  _ \n'+
                         '|_ |_ |_ |_ |_ |_ |_ |_ |_ \n'+
@@ -43,37 +43,37 @@ describe('11-katas-2-tasks', function() {
                 text:   ' _  _  _  _  _  _  _  _  _ \n'+
                         '|_ |_ |_ |_ |_ |_ |_ |_ |_ \n'+
                         '|_||_||_||_||_||_||_||_||_|\n',
-                result: 666666666 
+                result: 666666666
             },{
                 text:   ' _  _  _  _  _  _  _  _  _ \n'+
                         '  |  |  |  |  |  |  |  |  |\n'+
                         '  |  |  |  |  |  |  |  |  |\n',
-                result: 777777777 
+                result: 777777777
             },{
                 text:   ' _  _  _  _  _  _  _  _  _ \n'+
                         '|_||_||_||_||_||_||_||_||_|\n'+
                         '|_||_||_||_||_||_||_||_||_|\n',
-                result: 888888888 
+                result: 888888888
             },{
                 text:   ' _  _  _  _  _  _  _  _  _ \n'+
                         '|_||_||_||_||_||_||_||_||_|\n'+
                         ' _| _| _| _| _| _| _| _| _|\n',
-                result: 999999999 
+                result: 999999999
             },{
                 text:   '    _  _     _  _  _  _  _ \n'+
                         '  | _| _||_||_ |_   ||_||_|\n'+
                         '  ||_  _|  | _||_|  ||_| _|\n',
-                result: 123456789 
+                result: 123456789
             },{
                 text:   ' _  _  _  _  _  _  _  _  _ \n'+
                         '| | _| _|| ||_ |_   ||_||_|\n'+
                         '|_||_  _||_| _||_|  ||_| _|\n',
-                result: 23056789 
+                result: 23056789
             },{
                 text:   ' _  _  _  _  _  _  _  _  _ \n'+
                         '|_| _| _||_||_ |_ |_||_||_|\n'+
                         '|_||_  _||_| _||_| _||_| _|\n',
-                result: 823856989 
+                result: 823856989
             }
         ].forEach(data => {
             assert.equal(
@@ -92,14 +92,14 @@ describe('11-katas-2-tasks', function() {
                 cols:  26,
                 expected: [
                     'The String global object',
-                    'is a constructor for', 
+                    'is a constructor for',
                     'strings, or a sequence of',
                     'characters.'
                 ]
             },{
                 cols: 12,
                 expected: [
-                    'The String', 
+                    'The String',
                     'global',
                     'object is a',
                     'constructor',
@@ -131,101 +131,101 @@ describe('11-katas-2-tasks', function() {
         rankNames[PokerRank.Flush] = 'Flush';
         rankNames[PokerRank.Straight] = 'Straight';
         rankNames[PokerRank.ThreeOfKind] = 'ThreeOfKind';
-        rankNames[PokerRank.TwoPairs] = 'TwoPairs';                                
+        rankNames[PokerRank.TwoPairs] = 'TwoPairs';
         rankNames[PokerRank.OnePair] = 'OnePair';
         rankNames[PokerRank.HighCard] = 'HighCard';
-                        
+
         [
             {
                 hand: [ '4♥','5♥','6♥','7♥','8♥' ],
-                expected: PokerRank.StraightFlush 
+                expected: PokerRank.StraightFlush
             },{
                 hand: [ 'A♣','K♣','Q♣','J♣','10♣' ],
-                expected: PokerRank.StraightFlush 
+                expected: PokerRank.StraightFlush
             },{
                 hand: [ '10♦','9♦','6♦','7♦','8♦' ],
-                expected: PokerRank.StraightFlush 
+                expected: PokerRank.StraightFlush
             },{
                 hand: [ 'A♠','4♠','3♠','5♠','2♠' ],
-                expected: PokerRank.StraightFlush 
+                expected: PokerRank.StraightFlush
             },{
                 hand: [ '4♣','4♦','4♥','4♠','10♥' ],
-                expected: PokerRank.FourOfKind 
+                expected: PokerRank.FourOfKind
             },{
                 hand: [ '2♣','A♦','A♣','A♠','A♥' ],
-                expected: PokerRank.FourOfKind 
+                expected: PokerRank.FourOfKind
             },{
                 hand: [ '10♣','10♦','6♦','10♠','10♥' ],
-                expected: PokerRank.FourOfKind 
+                expected: PokerRank.FourOfKind
             },{
                 hand: [ '4♣','4♦','5♦','5♠','5♥' ],
-                expected: PokerRank.FullHouse 
+                expected: PokerRank.FullHouse
             },{
                 hand: [ 'A♣','2♦','A♦','2♠','2♥' ],
-                expected: PokerRank.FullHouse 
+                expected: PokerRank.FullHouse
             },{
                 hand: [ '4♣','4♦','5♦','5♠','5♥' ],
-                expected: PokerRank.FullHouse 
+                expected: PokerRank.FullHouse
             },{
                 hand: [ '4♣','5♣','6♣','7♣','Q♣' ],
-                expected: PokerRank.Flush 
+                expected: PokerRank.Flush
             },{
                 hand: [ 'A♦','2♦','3♦','4♦','K♦' ],
-                expected: PokerRank.Flush 
+                expected: PokerRank.Flush
             },{
                 hand: [ 'A♠','Q♠','J♠','10♠','9♠' ],
-                expected: PokerRank.Flush 
+                expected: PokerRank.Flush
             },{
                 hand: [ '2♥','4♥','5♥','7♥','A♥' ],
-                expected: PokerRank.Flush 
+                expected: PokerRank.Flush
             },{
                 hand: [ '2♠','3♥','4♥','5♥','6♥' ],
-                expected: PokerRank.Straight 
+                expected: PokerRank.Straight
             },{
                 hand: [ 'A♠','K♦','Q♦','J♦','10♦' ],
-                expected: PokerRank.Straight 
+                expected: PokerRank.Straight
             },{
                 hand: [ '10♥','8♥','9♠','7♥','6♦' ],
-                expected: PokerRank.Straight 
+                expected: PokerRank.Straight
             },{
                 hand: [ '2♥','4♦','5♥','A♦','3♠' ],
-                expected: PokerRank.Straight 
+                expected: PokerRank.Straight
             },{
                 hand: [ '2♥','2♠','2♦','7♥','A♥' ],
-                expected: PokerRank.ThreeOfKind 
+                expected: PokerRank.ThreeOfKind
             },{
                 hand: [ '2♥','4♥','A♥','A♦','A♠' ],
-                expected: PokerRank.ThreeOfKind 
+                expected: PokerRank.ThreeOfKind
             },{
                 hand: [ '10♥','9♥','10♦','J♥','10♠' ],
-                expected: PokerRank.ThreeOfKind 
+                expected: PokerRank.ThreeOfKind
             },{
                 hand: [ '2♥','4♦','4♥','A♦','A♠' ],
-                expected: PokerRank.TwoPairs 
+                expected: PokerRank.TwoPairs
             },{
                 hand: [ '3♥','4♥','A♥','3♦','A♠' ],
-                expected: PokerRank.TwoPairs 
+                expected: PokerRank.TwoPairs
             },{
                 hand: [ '5♥','6♥','A♥','6♦','5♠' ],
-                expected: PokerRank.TwoPairs 
+                expected: PokerRank.TwoPairs
             },{
                 hand: [ '2♥','4♦','5♥','A♦','A♠' ],
-                expected: PokerRank.OnePair 
+                expected: PokerRank.OnePair
             },{
                 hand: [ '3♥','4♥','10♥','3♦','A♠' ],
-                expected: PokerRank.OnePair 
+                expected: PokerRank.OnePair
             },{
                 hand: [ '5♥','6♥','7♥','8♦','5♠' ],
-                expected: PokerRank.OnePair 
+                expected: PokerRank.OnePair
             },{
                 hand: [ '3♥','4♥','5♥','7♦','8♥' ],
-                expected: PokerRank.HighCard 
+                expected: PokerRank.HighCard
             },{
                 hand: [ 'A♥','K♥','Q♥','J♦','5♠' ],
-                expected: PokerRank.HighCard 
+                expected: PokerRank.HighCard
             },{
                 hand: [ 'A♥','K♥','Q♥','2♦','3♠' ],
-                expected: PokerRank.HighCard 
+                expected: PokerRank.HighCard
             }
         ].forEach(data => {
             var actual = tasks.getPokerHandRank(data.hand);
@@ -250,44 +250,44 @@ describe('11-katas-2-tasks', function() {
             {
                 figure: '+------------+\n'+
                         '|            |\n'+
-                        '|            |\n'+    
                         '|            |\n'+
-                        '+------+-----+\n'+   
+                        '|            |\n'+
+                        '+------+-----+\n'+
                         '|      |     |\n'+
                         '|      |     |\n'+
                         '+------+-----+\n',
                 expected: [
                         '+------------+\n'+
-                        '|            |\n'+ 
                         '|            |\n'+
-                        '|            |\n'+  
+                        '|            |\n'+
+                        '|            |\n'+
                         '+------------+\n',
-                        
-                        '+------+\n'+ 
+
+                        '+------+\n'+
                         '|      |\n'+
                         '|      |\n'+
                         '+------+\n',
-                        
+
                         '+-----+\n'+
                         '|     |\n'+
                         '|     |\n'+
                         '+-----+\n'
                 ]
             },{
-                figure: '   +-----+     \n'+ 
-                        '   |     |     \n'+   
-                        '+--+-----+----+\n'+  
-                        '|             |\n'+ 
-                        '|             |\n'+ 
+                figure: '   +-----+     \n'+
+                        '   |     |     \n'+
+                        '+--+-----+----+\n'+
+                        '|             |\n'+
+                        '|             |\n'+
                         '+-------------+\n',
                 expected: [
-                        '+-----+\n'+ 
-                        '|     |\n'+   
+                        '+-----+\n'+
+                        '|     |\n'+
                         '+-----+\n',
 
-                        '+-------------+\n'+  
-                        '|             |\n'+ 
-                        '|             |\n'+ 
+                        '+-------------+\n'+
+                        '|             |\n'+
+                        '|             |\n'+
                         '+-------------+\n'
                 ]
             },{
@@ -298,19 +298,19 @@ describe('11-katas-2-tasks', function() {
                         '+--+--+--+\n'+
                         '   |  |   \n'+
                         '   +--+   \n',
-                expected: [ 
+                expected: [
                         '+--+\n'+
                         '|  |\n'+
                         '+--+\n',
-                        
+
                         '+--+\n'+
                         '|  |\n'+
                         '+--+\n',
-                        
+
                         '+--+\n'+
                         '|  |\n'+
                         '+--+\n',
-                        
+
                         '+-----+\n'+
                         '|     |\n'+
                         '+-----+\n'
@@ -321,13 +321,13 @@ describe('11-katas-2-tasks', function() {
                 expected: [
                         '++\n'+
                         '++\n',
-                        
+
                         '++\n'+
                         '++\n',
-                        
+
                         '++\n'+
                         '++\n',
-                ]        
+                ]
             }
         ].forEach(data => {
             var actual = Array.from(tasks.getFigureRectangles(data.figure)).sort();

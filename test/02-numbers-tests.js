@@ -5,12 +5,12 @@ var tasks = require('../task/02-numbers-tasks');
 it.optional = require('../extensions/it-optional');
 
 describe('02-numbers-tasks', function() {
-    
+
     it.optional('getRectagleSquare should return a square of rectangle', function() {
         assert.equal(50, tasks.getRectagleSquare(5, 10));
         assert.equal(25, tasks.getRectagleSquare(5, 5));
     });
-    
+
     it.optional('getCicleCircumference should return a circumference of cicle', function() {
         assert.equal(31.41592653589793, tasks.getCicleCircumference(5));
         assert.equal(19.729201864543903, tasks.getCicleCircumference(3.14));
@@ -23,13 +23,13 @@ describe('02-numbers-tasks', function() {
         assert.equal(0, tasks.getAverage(-3, 3));
         assert.equal(Number.MAX_VALUE-1, tasks.getAverage(Number.MAX_VALUE-2, Number.MAX_VALUE));
     });
-      
+
     it.optional('getDistanceBetweenPoints should return a distance between points', function() {
         assert.equal(1, tasks.getDistanceBetweenPoints(0, 0, 0, 1));
         assert.equal(1, tasks.getDistanceBetweenPoints(0, 0, 1, 0));
         assert.equal(18.027756377319946, tasks.getDistanceBetweenPoints(-5, 0, 10, -10));
     });
-      
+
     it.optional('getLinearEquationRoot should return a root of linear equation', function() {
         assert.equal(2, tasks.getLinearEquationRoot(5, -10));
         assert.equal(-8, tasks.getLinearEquationRoot(1, 8));

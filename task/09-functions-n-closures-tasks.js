@@ -7,23 +7,23 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments      *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures                           *
- *                                                                                            *     
+ *                                                                                            *
  **********************************************************************************************/
 
 
 /**
  * Returns the functions composition of two specified functions f(x) and g(x).
- * The result of compose is to be a function of one argument, (lets call the argument x), 
+ * The result of compose is to be a function of one argument, (lets call the argument x),
  * which works like applying function f to the result of applying function g to x, i.e.
- *  getComposition(f,g)(x) = f(g(x)) 
- * 
+ *  getComposition(f,g)(x) = f(g(x))
+ *
  * @param {Function} f
  * @param {Function} g
  * @return {Function}
- * 
+ *
  * @example
  *   getComposition(Math.sin, Math.asin)(x) => Math.sin(Math.acos(x))
- *   
+ *
  */
 function getComposition(f,g) {
     throw new Error('Not implemented');
@@ -31,20 +31,20 @@ function getComposition(f,g) {
 
 
 /**
- * Returns the math power function with the specified exponent 
- * 
+ * Returns the math power function with the specified exponent
+ *
  * @param {number} exponent
  * @return {Function}
- * 
+ *
  * @example
  *   var power2 = getPowerFunction(2); // => x^2
  *   power2(2) => 4
  *   power2(4) => 16
- * 
+ *
  *   var power05 = getPowerFunction(0.5); // => x^0.5
  *   power05(4) => 2
  *   power05(16) => 4
- * 
+ *
  */
 function getPowerFunction(exponent) {
     throw new Error('Not implemented');
@@ -54,10 +54,10 @@ function getPowerFunction(exponent) {
 /**
  * Returns the polynom function of one argument based on specified coefficients.
  * See: https://en.wikipedia.org/wiki/Polynomial#Definition
- * 
- * @params {integer} 
+ *
+ * @params {integer}
  * @return {Function}
- * 
+ *
  * @example
  *   getPolynom(2,3,5) => y = 2*x^2 + 3*x + 5
  *   getPolynom(1,-3)  => y = x - 3
@@ -70,12 +70,12 @@ function getPolynom() {
 
 
 /**
- * Memoizes passed function and returns function 
+ * Memoizes passed function and returns function
  * which invoked first time calls the passed function and then always returns cached result.
- * 
+ *
  * @params {Function} func - function to memoize
  * @return {Function} memoized function
- * 
+ *
  * @example
  *   var memoizer = memoize(() => Math.random());
  *   memoizer() => some random number  (first run, evaluates the result of Math.random())
@@ -115,21 +115,21 @@ function retry(func, attempts) {
  * The fromat of output log is:
  * <function name>(<arg1>, <arg2>,...,<argN>) starts
  * <function name>(<arg1>, <arg2>,...,<argN>) ends
- * 
+ *
  *
  * @param {Function} func
  * @param {Function} logFunc - function to output log with single string argument
  * @return {Function}
  *
  * @example
- * 
+ *
  * var cosLogger = logger(Math.cos, console.log);
- * var result = cosLogger(Math.PI));     // -1 
- * 
+ * var result = cosLogger(Math.PI));     // -1
+ *
  * log from console.log:
  * cos(3.141592653589793) starts
  * cos(3.141592653589793) ends
- * 
+ *
  */
 function logger(func, logFunc) {
     throw new Error('Not implemented');
@@ -155,11 +155,11 @@ function partialUsingArguments(fn) {
 
 
 /**
- * Returns the id generator function that returns next integer starting from specified number every time when invoking.  
- * 
+ * Returns the id generator function that returns next integer starting from specified number every time when invoking.
+ *
  * @param {Number} startFrom
  * @return {Function}
- * 
+ *
  * @example
  *   var getId4 = getIdGenerator(4);
  *   var getId10 = gerIdGenerator(10);
