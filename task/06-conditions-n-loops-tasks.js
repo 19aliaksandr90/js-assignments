@@ -68,6 +68,25 @@ function getSumBetweenNumbers(n1, n2) {
 
 
 /**
+ * Returns true, if a triangle can be built with the specified sides a,b,c and false in any other ways.
+ *
+ * @param {number} a
+ * @param {number} b
+ * @param {number} c
+ * @return {bool}
+ *
+ * Example:
+ *   1,2,3    =>  false
+ *   3,4,5    =>  true
+ *   10,1,1   =>  false
+ *   10,10,10 =>  true
+ */
+function isTriangle(a,b,c) {
+   throw new Error('Not implemented');
+}
+
+
+/**
  * Returns the first non repeated char in the specified strings otherwise returns null.
  *
  * @param {string} str
@@ -349,6 +368,7 @@ module.exports = {
     getFizzBuzz: getFizzBuzz,
     getFactorial: getFactorial,
     getSumBetweenNumbers: getSumBetweenNumbers,
+    isTriangle: isTriangle,
     findFirstSingleChar: findFirstSingleChar,
     getIntervalString : getIntervalString,
     reverseString: reverseString,

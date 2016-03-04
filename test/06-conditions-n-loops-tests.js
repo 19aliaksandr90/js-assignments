@@ -91,6 +91,29 @@ describe('06-conditions-n-loops-tasks', function() {
     });
 
 
+    it.optional('isTriangle should check if triangle can be built', () => {
+        [
+            { sides: [ 1, 2, 3] , expected:  false },
+            { sides: [ 3, 4, 5] , expected:  true },
+            { sides: [ 10, 1, 1] , expected:  false },
+            { sides: [ 10, 10, 10] , expected:  true },
+        ].forEach(data => { 
+            [[0,1,2], [0,2,1], [1,2,0], [1,0,2], [2,0,1], [2,1,0]].forEach(idx => {
+                var actual = tasks.isTriangle(
+                    data.sides[idx[0]],
+                    data.sides[idx[1]],
+                    data.sides[idx[2]]
+                );
+                assert.equal(
+                    actual,
+                    data.expected,
+                    `Triangle from [${data.sides.toString()}]: expected ${data.expected} but actual ${actual}`
+                );
+            })
+        });
+    });
+
+
     it.optional('findFirstSingleChar should return the first unrepeated char from string', () => {
         [
             { str: 'The quick brown fox jumps over the lazy dog', expected: 'T' },
