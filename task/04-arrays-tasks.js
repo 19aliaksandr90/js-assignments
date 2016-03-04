@@ -134,6 +134,35 @@ function insertItem(arr, item, index) {
    throw new Error('Not implemented');
 }
 
+/**
+ * Returns the n first items of the specified array
+ * 
+ * @param {array} arr
+ * @param {number} n 
+ * 
+ * @example
+ *    [ 1, 3, 4, 5 ], 2  => [ 1, 2 ]
+ *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
+ */
+function getHead(arr, n) {
+   throw new Error('Not implemented');
+}
+
+
+/**
+ * Returns the n last items of the specified array
+ * 
+ * @param {array} arr
+ * @param {number} n 
+ * 
+ * @example
+ *    [ 1, 3, 4, 5 ], 2  => [ 4, 5 ]
+ *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
+ */
+function getTail(arr, n) {
+   throw new Error('Not implemented');
+}
+
 
 /**
  * Returns CSV represebtation of two-dimentional numeric array.
@@ -485,6 +514,8 @@ module.exports = {
     getUpperCaseStrings: getUpperCaseStrings,
     getStringsLength: getStringsLength,
     insertItem: insertItem,
+    getHead: getHead,
+    getTail: getTail,
     toCsvText: toCsvText,
     toStringList: toStringList,
     toArrayOfSquares: toArrayOfSquares,

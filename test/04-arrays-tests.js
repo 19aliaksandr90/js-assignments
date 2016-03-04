@@ -216,6 +216,46 @@ describe('04-arrays-tasks', function() {
     });
 
 
+    it.optional('getHead should return the n first items from the specified array', function () {
+        [
+            {
+                arr:      [ 1, 2, 3, 4, 5 ],
+                n:        2,
+                expected: [ 1, 2 ]
+            },{
+                arr:      [ 'a', 'b', 'c', 'd' ],
+                n:        3,
+                expected: [ 'a', 'b', 'c' ]
+            }
+        ].forEach(data => {
+            assert.deepEqual(
+                data.expected,
+                tasks.getHead(data.arr, data.n)
+            );
+        });
+    });
+
+
+    it.optional('getTail should return the n last items from the specified array', function () {
+        [
+            {
+                arr:      [ 1, 2, 3, 4, 5 ],
+                n:        2,
+                expected: [ 4, 5 ]
+            },{
+                arr:      [ 'a', 'b', 'c', 'd' ],
+                n:        3,
+                expected: [ 'b', 'c', 'd' ]
+            }
+        ].forEach(data => {
+            assert.deepEqual(
+                data.expected,
+                tasks.getTail(data.arr, data.n)
+            );
+        });
+    });
+
+
     it.optional('toCsvText should convert two-dimentional numeric array to CSV format', function () {
         [
             {
