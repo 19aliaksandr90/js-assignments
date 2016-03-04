@@ -675,4 +675,29 @@ describe('04-arrays-tasks', function() {
         });
     });
 
+
+    it.optional('selectMany should return an array of child items from the specified array', function () {
+        [
+            {
+                arr:      [[1, 2], [3, 4], [5, 6]],
+                childrenSelector : x => x,
+                expected: [ 1, 2, 3, 4, 5, 6 ]
+            }, {
+                arr:      [[11, 12, 13, 14, 15], [21, 22, ,23, 24, 25], [31, 32, 34, 35]],
+                childrenSelector : x => x.slice(0,2),
+                expected: [ 11, 12, 21, 22, 31, 32 ]
+            }, {
+                arr:     ['one','two','three'],
+                childrenSelector: x=>x.split(''),
+                expected: ['o','n','e','t','w','o','t','h','r','e','e']
+            }
+        ].forEach(data => {
+            var actual = tasks.selectMany(data.arr, data.childrenSelector);
+            assert.deepEqual(
+                data.expected,
+                actual
+            );
+        });
+    });
+
 });
