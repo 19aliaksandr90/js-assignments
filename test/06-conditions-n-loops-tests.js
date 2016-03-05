@@ -213,7 +213,8 @@ describe('06-conditions-n-loops-tasks', function() {
 
    it.optional('isBracketsBalanced should check the balanced brackets', () => {
         [
-            '[]', '[[][][[]]]', '[[][]]', ''
+            '[]', '[[][][[]]]', '[[][]]', '', '<>', '{}', '()', '<()>', '{<>}', '[{}]',
+            '[{(<()[]{}<>>)}]', '{}<>()[]','{<>}{()}[[]](())'
         ].forEach(str => {
             assert(
                 tasks.isBracketsBalanced(str),
@@ -223,7 +224,8 @@ describe('06-conditions-n-loops-tasks', function() {
 
 
         [
-            '[[]', '][', '[][][][][[]'
+            '[[]', '][', '[][][][][[]', '{)', '<]','(}', '[{]}','{<}>','{{[(])}}','{}()[]<',
+            '{','(','[','({}[]<>(((())))','{{[]}}>'
         ].forEach(str => {
             assert(
                 tasks.isBracketsBalanced(str) == false,

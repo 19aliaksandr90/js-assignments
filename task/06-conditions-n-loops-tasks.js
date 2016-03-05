@@ -212,17 +212,22 @@ function getDigitalRoot(num) {
  * Returns the true if specified string has the balanced brackets and false otherwise
  * Balanced means that is, whether it consists entirely of pairs of opening/closing brackets
  * (in that order), none of which mis-nest.
+ * Brackets include [],(),{},<>
  *
  * @param {string} str
  * @return {boolean}
  *
  * Example:
+ *   '' => true
  *   '[]'  => true
+ *   '{}'  => true
+ *   '()   => true
  *   '[[]' => false
  *   ']['  => false
  *   '[[][][[]]]' => true
  *   '[[][]][' => false
- *   '' => true
+ *   '{)' = false
+ *   '{[(<{[]}>)]}' = true 
  */
 function isBracketsBalanced(str) {
    throw new Error('Not implemented');
