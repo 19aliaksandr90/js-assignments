@@ -63,7 +63,6 @@ describe('02-numbers-tasks', function() {
     });
 
     it.optional('isPrime should return true if specified number is prime', function() {
-        assert.equal(true, tasks.isPrime(1));
         assert.equal(true, tasks.isPrime(2));
         assert.equal(true, tasks.isPrime(3));
         assert.equal(false, tasks.isPrime(4));
