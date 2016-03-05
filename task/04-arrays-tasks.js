@@ -505,6 +505,24 @@ function selectMany(arr, childrenSelector) {
     throw new Error('Not implemented');
 }
 
+
+/**
+ * Projects an element from the multidimentional array by specified indexes.
+ *
+ * @param {array} arr
+ * @param {array} indexes
+ * @return {any} element from array
+ * 
+ * @example
+ *   [[1, 2], [3, 4], [5, 6]], [0,0]  => 1        (arr[0][0]) 
+ *   ['one','two','three'], [2]       => 'three'  (arr[2]) 
+ *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
+ */
+function getElementByIndexes(arr, indexes) {
+    throw new Error('Not implemented');
+}
+
+
 module.exports = {
     findElement: findElement,
     doubleArray: doubleArray,
@@ -533,5 +551,6 @@ module.exports = {
     getIntervalArray: getIntervalArray,
     distinct: distinct,
     group: group,
-    selectMany: selectMany
+    selectMany: selectMany,
+    getElementByIndexes: getElementByIndexes
 };
