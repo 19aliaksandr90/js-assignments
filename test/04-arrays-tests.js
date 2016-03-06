@@ -767,13 +767,13 @@ describe('04-arrays-tasks', function() {
      });
 
 
-    it.optional('Functions from 04-array-test.js should not use loops statements (for or while)', function () {
+    it.optional('Functions from 04-array-test.js should not use basic loops statements', function () {
         Object.getOwnPropertyNames(tasks)
               .filter(x => tasks[x] instanceof Function)
               .forEach(f => {
                   assert(
-                      !/[\s;{]((for)|(while))[\s(]/.test(tasks[f].toString()),
-                      `Function "${f}" should not use loop statements (for or while)! Please use standard array methods.`
+                      !/([;{]\s*(for|while)\s*\()|(\.forEach\s*\()/.test(tasks[f].toString()),
+                      `Function "${f}" should not use basic loop statements (for, while or Array.forEach)! Please use specialized array methods (Array.map, Array.reduce etc).`
                   );
               });
     });
