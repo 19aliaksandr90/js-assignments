@@ -32,6 +32,30 @@ describe('04-arrays-tasks', function() {
     });
 
 
+    it.optional('generateOdds should return the array of odd numbers of specified size', function () {
+        [
+            {
+                len:      1,
+                expected: [ 1 ]
+            },{
+                len:      2,
+                expected: [ 1, 3 ]
+            },{
+                len:      5,
+                expected: [ 1, 3, 5, 7, 9 ]
+            },{
+                len:      16,
+                expected: [ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31 ]
+            } 
+        ].forEach(data => {
+            assert.deepEqual(
+                data.expected,
+                tasks.generateOdds(data.len)
+            );
+        });
+    });
+
+
     it.optional('doubleArray should return the specified array twice', function () {
         [
             {
