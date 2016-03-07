@@ -31,6 +31,24 @@ function findStringInSnakingPuzzle(puzzle, searchStr) {
 }
 
 
+/**
+ * Returns all permutations of the specified string.
+ * Assume all chars in the specified string are different.
+ *
+ * @param {string} chars
+ * @return {Iterable.<string>} all posible strings constructed with the chars from the specfied string
+ *
+ * @example
+ *    'ab'  => 'ab','ba'
+ *    'abc' => 'abc','acb','bac','bca','cab','cba'
+ */
+function* getPermutations(chars) {
+    throw new Error('Not implemented');
+}
+
+
+
 module.exports = {
     findStringInSnakingPuzzle: findStringInSnakingPuzzle,
+    getPermutations: getPermutations
 };

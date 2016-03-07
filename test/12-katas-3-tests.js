@@ -34,4 +34,39 @@ describe('12-katas-3-tasks', function() {
         });
     });
 
+
+    it.optional('getPermutations shoud return all possible string permutations', () => {
+        [
+            {
+                chars:    'a',
+                expected: [ 'a' ]
+            },{
+                chars:    'ab',
+                expected: [ 'ab', 'ba' ]
+            },{
+                chars:    'abc',
+                expected: [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
+            },{
+                chars:    'abcd',
+                expected: [ 
+                    'abcd', 'abdc', 'acbd', 'acdb', 'adbc', 'adcb', 
+                    'bacd', 'badc', 'bdac', 'bdca', 'bcad', 'bcda', 
+                    'cabd', 'cadb', 'cbad', 'cbda', 'cdab', 'cdba', 
+                    'dabc', 'dacb', 'dbac', 'dbca', 'dcab', 'dcba'
+                ]
+            }
+        ].forEach(data => {
+            assert.deepEqual(
+                Array.from(tasks.getPermutations(data.chars)).sort(),
+                data.expected,
+                `Incorrect permutations of "${data.chars}"`
+            );
+        });
+        assert.equal(
+            Array.from(tasks.getPermutations('12345')).length,
+            120,
+            'Number of 5 chars permutations should be 120.'
+        );
+    });
+
 });
