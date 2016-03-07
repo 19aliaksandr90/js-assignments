@@ -1,0 +1,6 @@
+// Reorder by sex (even\odd)
+// currency rate analyzer
+// function that return body
+
+// matrix determinat generator
+// generate permutation 

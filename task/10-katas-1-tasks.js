@@ -30,7 +30,7 @@ function createCompassPoints() {
  * represent alternations that specify multiple alternatives which are to appear at that position in the output.
  *
  * @param {string} str
- * @return {iterator}
+ * @return {Iterable.<string>}
  *
  * NOTE: The order of output string does not matter.
  *

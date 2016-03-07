@@ -29,7 +29,7 @@
  * https://www.youtube.com/watch?v=Z7bmyjxJuVY   :)
  *
  *
- * @return {iterator}
+ * @return {Iterable.<string>}
  *
  */
 function* get99BottlesOfBeer() {
@@ -43,7 +43,7 @@ function* get99BottlesOfBeer() {
  *
  * See more at: https://en.wikipedia.org/wiki/Fibonacci_number
  *
- * @return {iterator}
+ * @return {Iterable.<number>}
  *
  */
 function* getFibonacciSequence() {
@@ -59,7 +59,7 @@ function* getFibonacciSequence() {
  * The leaf nodes do not have 'children' property.
  *
  * @params {object} root the tree root
- * @return {iterator} the sequence of all tree nodes in depth-first order
+ * @return {Iterable.<object>} the sequence of all tree nodes in depth-first order
  * @example
  *
  *   var node1 = { n:1 }, node2 = { n:2 }, node3 = { n:3 }, node4 = { n:4 },
@@ -94,7 +94,7 @@ function* depthTraversalTree(root) {
  * The leaf nodes do not have 'children' property.
  *
  * @params {object} root the tree root
- * @return {iterator} the sequence of all tree nodes in breadth-first order
+ * @return {Iterable.<object>} the sequence of all tree nodes in breadth-first order
  * @example
  *     source tree (root = 1):
  *
@@ -116,9 +116,9 @@ function* breadthTraversalTree(root) {
  * Merges two yield-style sorted sequences into the one sorted sequence.
  * The result sequence consists of sorted items from source iterators.
  *
- * @params {iterator} source1
- * @params {iterator} source2
- * @return {iterator} the merged sorted sequence
+ * @params {Iterable.<number>} source1
+ * @params {Iterable.<number>} source2
+ * @return {Iterable.<number>} the merged sorted sequence
  *
  * @example
  *   [ 1, 3, 5, ... ], [2, 4, 6, ... ]  => [ 1, 2, 3, 4, 5, 6, ... ]
