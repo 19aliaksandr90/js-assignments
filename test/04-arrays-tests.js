@@ -791,6 +791,35 @@ describe('04-arrays-tasks', function() {
      });
 
 
+    it.optional('swapHeadAndTail should swap the head and tail of the array', function () {
+        [
+            {
+                arr:      [ 1 ],
+                expected: [ 1 ]
+            },{
+                arr:      [ 1, 2 ],
+                expected: [ 2, 1 ]
+            },{
+                arr:      [ 1, 2, 3 ],
+                expected: [ 3, 2, 1 ]
+            },{
+                arr:      [ 1, 2, 3, 4 ],
+                expected: [ 3, 4, 1, 2 ]
+            },{
+                arr:      [ 1, 2, 3, 4, 5 ],
+                expected: [ 4, 5, 3, 1, 2 ]
+            }
+        ].forEach(data => {
+            var actual = tasks.swapHeadAndTail(Array.from(data.arr));
+            assert.deepEqual(
+                data.expected,
+                actual,
+                `The result of swaping head and tail [${data.arr}] is not correct`
+            );
+        });
+    });
+
+
     it.optional('Functions from 04-array-test.js should not use basic loops statements', function () {
         Object.getOwnPropertyNames(tasks)
               .filter(x => tasks[x] instanceof Function)

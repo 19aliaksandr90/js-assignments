@@ -538,6 +538,29 @@ function getElementByIndexes(arr, indexes) {
 }
 
 
+/**
+ * Swaps the head and tail of the specified array:
+ * the head (first half) of array moved to the end, the tail (last half) moved to the start. 
+ * The middle element (if exists) left on the same position.
+ * 
+ *  
+ * @param {array} arr
+ * @return {array}
+ * 
+ * @example
+ *   [ 1, 2, 3, 4, 5 ]   =>  [ 4, 5, 3, 1, 2 ]
+ *    \----/   \----/         
+ *     head     tail 
+ *
+ *   [ 1, 2 ]  => [ 2, 1 ] 
+ *   [ 1, 2, 3, 4, 5, 6, 7, 8 ]   =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]   
+ * 
+ */
+function swapHeadAndTail(arr) {
+    throw new Error('Not implemented');
+}
+
+
 module.exports = {
     findElement: findElement,
     generateOdds: generateOdds,
@@ -568,5 +591,6 @@ module.exports = {
     distinct: distinct,
     group: group,
     selectMany: selectMany,
-    getElementByIndexes: getElementByIndexes
+    getElementByIndexes: getElementByIndexes,
+    swapHeadAndTail: swapHeadAndTail
 };
