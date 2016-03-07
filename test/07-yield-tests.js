@@ -245,6 +245,7 @@ describe('07-yield-tasks', function() {
             );
             if (index>=expected.length) break;
         }
+        if (index<expected.length) assert.fail(index, expected.length,`sequence length should be equal to ${expected.length}`);
 
     });
 
