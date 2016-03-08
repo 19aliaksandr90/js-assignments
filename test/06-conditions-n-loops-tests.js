@@ -114,6 +114,47 @@ describe('06-conditions-n-loops-tasks', function() {
     });
 
 
+    it.optional('doRectanglesOverlap should return true if rectangles overlap', () => {
+        [
+            { 
+                rect1:    { top: 0, left: 0, width: 10, height: 10 },
+                rect2:    { top: 5, left: 5, width: 10, height: 10 },
+                expected: true
+            },{
+                rect1:    { top: 10, left: 10, width: 10, height: 10 },
+                rect2:    { top:  5, left: 5, width: 15, height: 15 },
+                expected: true
+            },{
+                rect1:    { top: 10, left: 10, width: 50, height:  5 },
+                rect2:    { top:  5, left: 5,  width: 10, height: 50 },
+                expected: true
+            },{
+                rect1:    { top:  0, left:  0, width: 90, height: 90 },
+                rect2:    { top: 25, left: 25, width: 10, height: 10 },
+                expected: true
+            },{
+                rect1:    { top:  5, left:  5, width: 20, height: 20 },
+                rect2:    { top:  5, left:  5, width: 40, height: 10 },
+                expected: true
+            },{
+                rect1:    { top:  5, left:  5, width: 20, height: 20 },
+                rect2:    { top: 30, left:  5, width: 40, height: 10 },
+                expected: false
+            },{
+                rect1:    { top:  0, left:  0, width: 90, height: 90 },
+                rect2:    { top: 25, left:100, width: 10, height: 10 },
+                expected: false
+            }
+        ].forEach(data => { 
+            assert.equal(
+                tasks.doRectanglesOverlap(data.rect1, data.rect2),
+                data.expected,
+                `doRectanglesOverlap(\n   ${JSON.stringify(data.rect1)},\n   ${JSON.stringify(data.rect2)}\n): expected ${data.expected}`
+            );
+        });
+    });
+
+
     it.optional('findFirstSingleChar should return the first unrepeated char from string', () => {
         [
             { str: 'The quick brown fox jumps over the lazy dog', expected: 'T' },

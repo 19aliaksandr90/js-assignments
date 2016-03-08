@@ -75,7 +75,7 @@ function getSumBetweenNumbers(n1, n2) {
  * @param {number} c
  * @return {bool}
  *
- * Example:
+ * @example:
  *   1,2,3    =>  false
  *   3,4,5    =>  true
  *   10,1,1   =>  false
@@ -83,6 +83,41 @@ function getSumBetweenNumbers(n1, n2) {
  */
 function isTriangle(a,b,c) {
    throw new Error('Not implemented');
+}
+
+
+/**
+ * Returns true, if two specified axis-aligned rectangles overlap, otherwise false.
+ * Each rectangle representing by object 
+ *  {
+ *     top: 5,
+ *     left: 5,
+ *     width: 20,
+ *     height: 10
+ *  }
+ * 
+ *  (5;5)
+ *     -------------  
+ *     |           | 
+ *     |           |  height = 10
+ *     ------------- 
+ *        width=20    
+ * 
+ * 
+ * @param {object} rect1
+ * @param {object} rect2
+ * @return {bool}
+ *
+ * @example:
+ *   { top: 0, left: 0, width: 10, height: 10 },
+ *   { top: 5, left: 5, width: 20, height: 20 }    =>  true
+ * 
+ *   { top: 0, left: 0, width: 10, height: 10 },
+ *   { top:20, left:20, width: 20, height: 20 }    =>  false
+ *  
+ */
+function doRectanglesOverlap(rect1, rect2) {
+    throw new Error('Not implemented');
 }
 
 
@@ -374,6 +409,7 @@ module.exports = {
     getFactorial: getFactorial,
     getSumBetweenNumbers: getSumBetweenNumbers,
     isTriangle: isTriangle,
+    doRectanglesOverlap: doRectanglesOverlap,
     findFirstSingleChar: findFirstSingleChar,
     getIntervalString : getIntervalString,
     reverseString: reverseString,
