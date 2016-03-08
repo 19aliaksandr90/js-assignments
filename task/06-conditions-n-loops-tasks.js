@@ -30,7 +30,7 @@
  *
  */
 function getFizzBuzz(num) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -40,13 +40,13 @@ function getFizzBuzz(num) {
  * @param {number} n
  * @return {number}
  *
- * Example:
+ * @example:
  *   1  => 1
  *   5  => 120
  *   10 => 3628800
  */
 function getFactorial(n) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -57,13 +57,13 @@ function getFactorial(n) {
  * @param {number} n2
  * @return {number}
  *
- * Example:
+ * @example:
  *   1,2   =>  3  ( = 1+2 )
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -82,7 +82,7 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -127,13 +127,13 @@ function doRectanglesOverlap(rect1, rect2) {
  * @param {string} str
  * @return {string}
  *
- * Example:
+ * @example:
  *   'The quick brown fox jumps over the lazy dog' => 'T'
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -159,7 +159,7 @@ function findFirstSingleChar(str) {
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -169,15 +169,14 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * @param {string} str
  * @return {string}
  *
- * Example:
+ * @example:
  * 'The quick brown fox jumps over the lazy dog' => 'god yzal eht revo spmuj xof nworb kciuq ehT'
  * 'abracadabra' => 'arbadacarba'
  * 'rotator' => 'rotator'
  * 'noon' => 'noon'
- *
  */
 function reverseString(str) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -187,14 +186,14 @@ function reverseString(str) {
  * @param {number} num
  * @return {number}
  *
- * Example:
+ * @example:
  *   12345 => 54321
  *   1111  => 1111
  *   87354 => 45378
  *   34143 => 34143
  */
 function reverseInteger(num) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -207,7 +206,7 @@ function reverseInteger(num) {
  * @param {number} cnn
  * @return {boolean}
  *
- * Example:
+ * @example:
  *   79927398713      => true
  *   4012888888881881 => true
  *   5123456789012346 => true
@@ -217,10 +216,9 @@ function reverseInteger(num) {
  *   4571234567890111 => false
  *   5436468789016589 => false
  *   4916123456789012 => false
- *
  */
 function isCreditCardNumber(ccn) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -232,14 +230,14 @@ function isCreditCardNumber(ccn) {
  * @param {number} n
  * @return {number}
  *
- * Example:
+ * @example:
  *   12345 ( 1+2+3+4+5 = 15, 1+5 = 6) => 6
  *   23456 ( 2+3+4+5+6 = 20, 2+0 = 2) => 2
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -252,7 +250,7 @@ function getDigitalRoot(num) {
  * @param {string} str
  * @return {boolean}
  *
- * Example:
+ * @example:
  *   '' => true
  *   '[]'  => true
  *   '{}'  => true
@@ -265,7 +263,7 @@ function getDigitalRoot(num) {
  *   '{[(<{[]}>)]}' = true 
  */
 function isBracketsBalanced(str) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -301,7 +299,7 @@ function isBracketsBalanced(str) {
  *
  */
 function timespanToHumanString(startDate, endDate) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -316,7 +314,7 @@ function timespanToHumanString(startDate, endDate) {
  * @param {number} n
  * @return {string}
  *
- * Example:
+ * @example:
  *   1024, 2  => '10000000000'
  *   6561, 3  => '100000000'
  *    365, 2  => '101101101'
@@ -325,7 +323,7 @@ function timespanToHumanString(startDate, endDate) {
  *    365, 10 => '365'
  */
 function toNaryString(num, n) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -335,14 +333,14 @@ function toNaryString(num, n) {
  * @param {array} pathes
  * @return {string}
  *
- * Example:
+ * @example:
  *   ['/web/images/image1.png', '/web/images/image2.png']  => '/web/images/'
  *   ['/web/assets/style.css', '/web/scripts/app.js',  'home/setting.conf'] => ''
  *   ['/web/assets/style.css', '/.bin/mocha',  '/read.me'] => '/'
  *   ['/web/favicon.ico', '/web-scripts/dump', '/webalizer/logs'] => '/'
  */
 function getCommonDirectoryPath(pathes) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -354,7 +352,7 @@ function getCommonDirectoryPath(pathes) {
  * @param {array} m2
  * @return {array}
  *
- * Example:
+ * @example:
  *   [[ 1, 0, 0 ],       [[ 1, 2, 3 ],           [[ 1, 2, 3 ],
  *    [ 0, 1, 0 ],   X    [ 4, 5, 6 ],     =>     [ 4, 5, 6 ],
  *    [ 0, 0, 1 ]]        [ 7, 8, 9 ]]            [ 7, 8, 9 ]]
@@ -365,7 +363,7 @@ function getCommonDirectoryPath(pathes) {
  *
  */
 function getMatrixProduct(m1, m2) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -400,7 +398,7 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
