@@ -34,7 +34,8 @@ function findStringInSnakingPuzzle(puzzle, searchStr) {
 /**
  * Returns all permutations of the specified string.
  * Assume all chars in the specified string are different.
- *
+ * The order of permutations does not matter.
+ * 
  * @param {string} chars
  * @return {Iterable.<string>} all posible strings constructed with the chars from the specfied string
  *
