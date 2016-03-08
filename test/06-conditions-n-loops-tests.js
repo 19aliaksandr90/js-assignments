@@ -155,6 +155,47 @@ describe('06-conditions-n-loops-tasks', function() {
     });
 
 
+    it.optional('isInsideCircle should return true if point lies inside of the specified circle', () => {
+        [
+            { 
+                circle:   { center: { x: 0, y: 0 }, radius: 10 },
+                point:    { x: 0, y: 0 },
+                expected: true
+            },{ 
+                circle:   { center: { x: 5, y: 5 }, radius: 6 },
+                point:    { x: 5, y: 10.99 },
+                expected: true
+            },{ 
+                circle:   { center: { x: 0, y: 0 }, radius: 10 },
+                point:    { x: 0, y: 10 },
+                expected: false
+            },{ 
+                circle:   { center: { x: 5, y: 5 }, radius: 6 },
+                point:    { x: 0, y: 0 },
+                expected: false
+            },{ 
+                circle:   { center: { x: 2, y: 2 }, radius: 1 },
+                point:    { x: 2.8, y: 2.8 },
+                expected: false
+            },{
+                circle:   { center: { x: 2, y: 2 }, radius: 4 },
+                point:    { x: -1, y: -1 },
+                expected: false
+            },{
+                circle:   { center: { x: 2, y: 2 }, radius: 4 },
+                point:    { x: 2, y: 6.1 },
+                expected: false
+            }
+        ].forEach(data => { 
+            assert.equal(
+                tasks.isInsideCircle(data.circle, data.point),
+                data.expected,
+                `isInsideCircle(\n   ${JSON.stringify(data.circle)},\n   ${JSON.stringify(data.point)}\n): expected ${data.expected}`
+            );
+        });
+    });
+
+
     it.optional('findFirstSingleChar should return the first unrepeated char from string', () => {
         [
             { str: 'The quick brown fox jumps over the lazy dog', expected: 'T' },
