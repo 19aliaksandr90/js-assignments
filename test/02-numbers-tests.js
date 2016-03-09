@@ -63,20 +63,20 @@ describe('02-numbers-tasks', function() {
     });
 
     it.optional('isPrime should return true if specified number is prime', function() {
-        assert.equal(true, tasks.isPrime(2));
-        assert.equal(true, tasks.isPrime(3));
-        assert.equal(false, tasks.isPrime(4));
-        assert.equal(true, tasks.isPrime(5));
-        assert.equal(false, tasks.isPrime(6));
-        assert.equal(true, tasks.isPrime(7));
-        assert.equal(false, tasks.isPrime(8));
-        assert.equal(false, tasks.isPrime(9));
-        assert.equal(false, tasks.isPrime(10));
-        assert.equal(true, tasks.isPrime(11));
-        assert.equal(false, tasks.isPrime(12));
-        assert.equal(true, tasks.isPrime(13));
-        assert.equal(true, tasks.isPrime(113));
-        assert.equal(false, tasks.isPrime(119));
+        assert.equal(true, tasks.isPrime(2), "2");
+        assert.equal(true, tasks.isPrime(3), "3");
+        assert.equal(false, tasks.isPrime(4), "4");
+        assert.equal(true, tasks.isPrime(5), "5");
+        assert.equal(false, tasks.isPrime(6), "6");
+        assert.equal(true, tasks.isPrime(7), "7");
+        assert.equal(false, tasks.isPrime(8), "8");
+        assert.equal(false, tasks.isPrime(9), "9");
+        assert.equal(false, tasks.isPrime(10), "10");
+        assert.equal(true, tasks.isPrime(11), "11");
+        assert.equal(false, tasks.isPrime(12), "12");
+        assert.equal(true, tasks.isPrime(13), "13");
+        assert.equal(true, tasks.isPrime(113), "113");
+        assert.equal(false, tasks.isPrime(119), "119");
     });
 
     it.optional('toNumber should convert any value to number or return the default', function() {
