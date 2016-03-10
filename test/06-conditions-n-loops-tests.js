@@ -212,6 +212,50 @@ describe('06-conditions-n-loops-tasks', function() {
     });
 
 
+    it.optional('getIntervalString should return the string representation of math interval', () => {
+        [
+            {
+                a: 0,
+                b: 1,
+                isStartIncluded: true,
+                isEndIncluded: true,
+                expected: '[0, 1]'
+            },{
+                a: 0,
+                b: 1,
+                isStartIncluded: true,
+                isEndIncluded: false,
+                expected: '[0, 1)'
+            },{
+                a: 0,
+                b: 1,
+                isStartIncluded: false,
+                isEndIncluded: true,
+                expected: '(0, 1]'
+            },{
+                a: 0,
+                b: 1,
+                isStartIncluded: false,
+                isEndIncluded: false,
+                expected: '(0, 1)'
+            },{
+                a: 5,
+                b: 3,
+                isStartIncluded: true,
+                isEndIncluded: true,
+                expected: '[3, 5]'
+            }
+        ].forEach(data => {
+            var actual = tasks.getIntervalString(data.a, data.b, data.isStartIncluded, data.isEndIncluded);
+            assert.equal(
+                actual,
+                data.expected,
+                `getIntervalString(${data.a}, ${data.b}, ${data.isStartIncluded}, ${data.isEndIncluded}) shoud return '${data.expected}', but actually '${actual}'`
+            )
+        });
+    });
+
+
     it.optional('reverseString should return the specified string in reverse order', () => {
         [
             { str: 'The quick brown fox jumps over the lazy dog', expected: 'god yzal eht revo spmuj xof nworb kciuq ehT' },
@@ -315,50 +359,6 @@ describe('06-conditions-n-loops-tasks', function() {
             )
         });
 
-    });
-
-
-    it.optional('getIntervalString should return the string representation of math interval', () => {
-        [
-            {
-                a: 0,
-                b: 1,
-                isStartIncluded: true,
-                isEndIncluded: true,
-                expected: '[0, 1]'
-            },{
-                a: 0,
-                b: 1,
-                isStartIncluded: true,
-                isEndIncluded: false,
-                expected: '[0, 1)'
-            },{
-                a: 0,
-                b: 1,
-                isStartIncluded: false,
-                isEndIncluded: true,
-                expected: '(0, 1]'
-            },{
-                a: 0,
-                b: 1,
-                isStartIncluded: false,
-                isEndIncluded: false,
-                expected: '(0, 1)'
-            },{
-                a: 5,
-                b: 3,
-                isStartIncluded: true,
-                isEndIncluded: true,
-                expected: '[3, 5]'
-            }
-        ].forEach(data => {
-            var actual = tasks.getIntervalString(data.a, data.b, data.isStartIncluded, data.isEndIncluded);
-            assert.equal(
-                actual,
-                data.expected,
-                `getIntervalString(${data.a}, ${data.b}, ${data.isStartIncluded}, ${data.isEndIncluded}) shoud return '${data.expected}', but actually '${actual}'`
-            )
-        });
     });
 
 

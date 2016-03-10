@@ -35,7 +35,7 @@ function getFizzBuzz(num) {
 
 
 /**
- * Returns the factorial of specified integer n.
+ * Returns the factorial of the specified integer n.
  *
  * @param {number} n
  * @return {number}
@@ -186,7 +186,7 @@ function findFirstSingleChar(str) {
  *   0, 1, false, true  => '(0, 1]'
  *   0, 1, false, false => '(0, 1)'
  * Smaller number has to be first :
- *   5, 3, true, true   => '[3,5]'
+ *   5, 3, true, true   => '[3, 5]'
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
@@ -273,7 +273,7 @@ function getDigitalRoot(num) {
 
 
 /**
- * Returns the true if specified string has the balanced brackets and false otherwise
+ * Returns true if the specified string has the balanced brackets and false otherwise.
  * Balanced means that is, whether it consists entirely of pairs of opening/closing brackets
  * (in that order), none of which mis-nest.
  * Brackets include [],(),{},<>
@@ -342,7 +342,7 @@ function timespanToHumanString(startDate, endDate) {
  * https://en.wikipedia.org/wiki/Radix
  *
  * @param {number} num
- * @param {number} n
+ * @param {number} n, radix of the result
  * @return {string}
  *
  * @example:
