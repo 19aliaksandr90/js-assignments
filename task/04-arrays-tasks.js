@@ -143,7 +143,7 @@ function getStringsLength(arr) {
  * 
  * @example
  *    [ 1, 3, 4, 5 ], 2, 1  => [ 1, 2, 3, 4, 5 ]
- *    [ 1, 'b', 'c'], 0, "x"  => [ 'x', 1, 'b', 'c' ]
+ *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
 function insertItem(arr, item, index) {
    throw new Error('Not implemented');
@@ -324,10 +324,10 @@ function sortDigitNamesByNumericOrder(arr) {
 }
 
 /** 
- * Returns the sum of all items in specified array of numbers
+ * Returns the sum of all items in the specified array of numbers
  * 
  * @param {array} arr
- * @return {array}
+ * @return {number}
  * 
  * @example
  *   [] => 0
@@ -440,7 +440,7 @@ function getIdentityMatrix(n) {
 }
 
 /**
- * Creates an array of integers from specified start to end (inclusive)
+ * Creates an array of integers from the specified start to end (inclusive)
  * 
  * @param {number} start
  * @param {number} end
@@ -510,7 +510,8 @@ function group(array, keySelector, valueSelector) {
  * Projects each element of the specified array to a sequence and flattens the resulting sequences into one array.
  *
  * @param {array} arr
- * @return {Function} childrenSelector, a transform function to apply to each element that returns an array of children
+ * @param {Function} childrenSelector, a transform function to apply to each element that returns an array of children
+ * @return {array}
  * 
  * @example
  *   [[1, 2], [3, 4], [5, 6]], (x) => x     =>   [ 1, 2, 3, 4, 5, 6 ]
@@ -522,7 +523,7 @@ function selectMany(arr, childrenSelector) {
 
 
 /**
- * Projects an element from the multidimentional array by specified indexes.
+ * Returns an element from the multidimentional array by the specified indexes.
  *
  * @param {array} arr
  * @param {array} indexes
@@ -540,8 +541,8 @@ function getElementByIndexes(arr, indexes) {
 
 /**
  * Swaps the head and tail of the specified array:
- * the head (first half) of array moved to the end, the tail (last half) moved to the start. 
- * The middle element (if exists) left on the same position.
+ * the head (first half) of array move to the end, the tail (last half) move to the start. 
+ * The middle element (if exists) leave on the same position.
  * 
  *  
  * @param {array} arr
