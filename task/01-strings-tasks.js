@@ -75,7 +75,7 @@ function extractNameFromTemplate(value) {
 
 
 /**
- * Returns a first char of given string.
+ * Returns a first char of the given string.
  *
  * @param {string} value
  * @return {string}
@@ -89,7 +89,7 @@ function getFirstChar(value) {
 }
 
 /**
- * Removes a leading and trailing whitespace character from string.
+ * Removes a leading and trailing whitespace characters from string.
  *
  * @param {string} value
  * @return {string}
@@ -119,7 +119,7 @@ function repeatString(value, count) {
 }
 
 /**
- * Remove all occurrences of string inside another string
+ * Remove the first occurrence of string inside another string
  * 
  * @param {string} str
  * @param {string} value
@@ -165,7 +165,7 @@ function convertToUpperCase(str) {
 }
 
 /**
- * Extracts e-mails from single string with e-mails list delimeted by semicolon
+ * Extracts e-mails from single string with e-mails list delimeted by semicolons
  *
  * @param {string} str
  * @return {array}
