@@ -6,9 +6,9 @@ it.optional = require('../extensions/it-optional');
 
 describe('02-numbers-tasks', function() {
 
-    it.optional('getRectagleSquare should return a square of rectangle', function() {
-        assert.equal(50, tasks.getRectagleSquare(5, 10));
-        assert.equal(25, tasks.getRectagleSquare(5, 5));
+    it.optional('getRectangleArea should return a square of rectangle', function() {
+        assert.equal(50, tasks.getRectangleArea(5, 10));
+        assert.equal(25, tasks.getRectangleArea(5, 5));
     });
 
     it.optional('getCicleCircumference should return a circumference of cicle', function() {
