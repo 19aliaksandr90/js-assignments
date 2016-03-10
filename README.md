@@ -84,8 +84,8 @@ To debug tests you can use **Node inspector**. To install it just run `npm insta
 * Open the link in your favorite browser. You should see Chrome Developers Tools like interface where you can debug your tasks.
 * When you found and fix your issue, close the browser's tab with the debug tools, stop the node-inspector by pressing Ctrl-C, stop the test runner by pressing Ctrl-C, remove the `debugger;` from your task.
 
-### How to debug (beginer's way)
-There is an easier way to debug for beginers with free Visual Studio Code:
+### How to debug (beginner's way)
+There is an easier way to debug for beginners with free Visual Studio Code:
 * Install VSC from https://code.visualstudio.com/
 * Open project folder in VSC and follow the instruction from https://code.visualstudio.com/docs/runtimes/nodejs#_debugging-your-node-application to create a default `launch.json`
 * Modify the `launch.json` in the IDE, set the properties "program" and "args" (empty "args" value run all tests, to run partucular test specify this test file in "args"):
