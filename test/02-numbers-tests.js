@@ -62,6 +62,18 @@ describe('02-numbers-tasks', function() {
         //assert.equal(Math.sqrt(14), tasks.getParallelipidedDiagonal(1,2,3));
     });
 
+    it.optional('roundToPowerOfTen should return an number rounded to specified power of 10', function() {
+        assert.equal(1234, tasks.roundToPowerOfTen(1234,0));
+        assert.equal(1230, tasks.roundToPowerOfTen(1234,1));
+        assert.equal(1200, tasks.roundToPowerOfTen(1234,2));
+        assert.equal(1000, tasks.roundToPowerOfTen(1234,3));
+        
+        assert.equal(9678, tasks.roundToPowerOfTen(9678,0));
+        assert.equal(9680, tasks.roundToPowerOfTen(9678,1));
+        assert.equal(9700, tasks.roundToPowerOfTen(9678,2));
+        assert.equal(10000, tasks.roundToPowerOfTen(9678,3));
+    });
+
     it.optional('isPrime should return true if specified number is prime', function() {
         assert.equal(true, tasks.isPrime(2), "2");
         assert.equal(true, tasks.isPrime(3), "3");
