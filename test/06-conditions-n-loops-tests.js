@@ -342,8 +342,7 @@ describe('06-conditions-n-loops-tasks', function() {
             { num: 12345, expected: 6 },
             { num: 23456, expected: 2 },
             { num: 10000, expected: 1 },
-            { num: 165536, expected: 8 },
-            { num: Number.MAX_VALUE, expected: 2 }
+            { num: 165536, expected: 8 }
         ].forEach(data => {
             var actual = tasks.getDigitalRoot(data.num);
             assert.equal(
