@@ -337,6 +337,24 @@ describe('06-conditions-n-loops-tasks', function() {
     });
 
 
+    it.optional('getDigitalRoot should return the cyclic sum of all digits', () => {
+        [
+            { num: 12345, expected: 6 },
+            { num: 23456, expected: 2 },
+            { num: 10000, expected: 1 },
+            { num: 165536, expected: 8 },
+            { num: Number.MAX_VALUE, expected: 2 }
+        ].forEach(data => {
+            var actual = tasks.getDigitalRoot(data.num);
+            assert.equal(
+                actual,
+                data.expected,
+                `GetDigitalRoot(${data.num}) = ${data.expected}, but actual ${actual}`
+            )
+        });
+    });
+
+
    it.optional('isBracketsBalanced should check the balanced brackets', () => {
         [
             '[]', '[[][][[]]]', '[[][]]', '', '<>', '{}', '()', '<()>', '{<>}', '[{}]',
