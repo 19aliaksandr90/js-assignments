@@ -786,7 +786,7 @@ describe('04-arrays-tasks', function() {
             }
         ].forEach(data => {
             var actual = tasks.selectMany(data.arr, data.childrenSelector);
-            assert.deepEqual(
+            assert.deepStrictEqual(
                 data.expected,
                 actual
             );
