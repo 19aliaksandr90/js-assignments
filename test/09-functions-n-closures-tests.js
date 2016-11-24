@@ -79,7 +79,7 @@ describe('09-functions-n-closures-tasks', function() {
         var expected = 'expected';
 
         var fn = function() {
-            if (attemps++<maxAttemps) throw new Error();
+            if (++attemps<maxAttemps) throw new Error();
             return expected;
         }
 
