@@ -99,9 +99,7 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-  return arr.filter(element => {
-    if (element !== null && element !== false && element !== "") return element;
-  });
+  return arr.filter(elem => Boolean(elem));
 }
 
 /**
@@ -172,7 +170,8 @@ function getHead(arr, n) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
 function getTail(arr, n) {
-  return arr.splice(-n);
+  const tailOfArray = arr.splice(-n);
+  return tailOfArray;
 }
 
 /**
@@ -229,7 +228,7 @@ function toArrayOfSquares(arr) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
 function getMovingSum(arr) {
-  let resultArr = [];
+  const resultArr = [];
   arr.reduce(
     (previous, current, index) => (resultArr[index] = previous + current),
     0
@@ -249,7 +248,7 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-  return arr.filter((_, index) => index & 1);
+  return arr.filter((_, index) => index % 2);
 }
 
 /**
@@ -288,7 +287,7 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-  return arr.slice(-3).reverse();
+  return arr.sort((a, b) => b - a).slice(0, 3);
 }
 
 /**
@@ -579,12 +578,13 @@ function getElementByIndexes(arr, indexes) {
  *
  */
 function swapHeadAndTail(arr) {
-  let length = arr.length;
-  let tail = Math.round(length / 2);
-  let head = Math.floor(length / 2);
-  let a = arr.splice(0, head);
-  let b = arr.splice(tail - head);
-  return b.concat(arr, a);
+  const length = arr.length;
+  const tailLength = Math.ceil(length / 2);
+  const headLength = Math.floor(length / 2);
+  const mid = arr.slice(headLength, tailLength);
+  const tail = arr.slice(0, headLength);
+  const head = arr.slice(tailLength, length);
+  return head.concat(mid, tail);
 }
 
 module.exports = {
