@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**********************************************************************************************
  *                                                                                            *
@@ -9,7 +9,6 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures                           *
  *                                                                                            *
  **********************************************************************************************/
-
 
 /**
  * Returns the functions composition of two specified functions f(x) and g(x).
@@ -25,10 +24,9 @@
  *   getComposition(Math.sin, Math.asin)(x) => Math.sin(Math.acos(x))
  *
  */
-function getComposition(f,g) {
-    throw new Error('Not implemented');
+function getComposition(f, g) {
+  return x => f(g(x));
 }
-
 
 /**
  * Returns the math power function with the specified exponent
@@ -47,9 +45,8 @@ function getComposition(f,g) {
  *
  */
 function getPowerFunction(exponent) {
-    throw new Error('Not implemented');
+  return x => Math.pow(x, exponent);
 }
-
 
 /**
  * Returns the polynom function of one argument based on specified coefficients.
@@ -65,9 +62,21 @@ function getPowerFunction(exponent) {
  *   getPolynom()      => null
  */
 function getPolynom() {
-    throw new Error('Not implemented');
-}
+  const args = arguments;
 
+  if (!args.length) {
+    return null;
+  }
+
+  return x => {
+    let result = 0;
+    const pow = args.length - 1;
+    for (let i = 0; i <= pow; i++) {
+      result += args[i] * Math.pow(x, pow - i);
+    }
+    return result;
+  };
+}
 
 /**
  * Memoizes passed function and returns function
@@ -84,9 +93,9 @@ function getPolynom() {
  *   memoizer() => the same random number  (next run, returns the previous cached result)
  */
 function memoize(func) {
-    throw new Error('Not implemented');
+  const memory = func();
+  return () => memory;
 }
-
 
 /**
  * Returns the function trying to call the passed function and if it throws,
@@ -104,9 +113,13 @@ function memoize(func) {
  * retryer() => 2
  */
 function retry(func, attempts) {
-    throw new Error('Not implemented');
+  return () => {
+    for (let i = 0; i <= attempts; i++)
+      try {
+        return func();
+      } catch (error) {}
+  };
 }
-
 
 /**
  * Returns the logging wrapper for the specified method,
@@ -132,9 +145,16 @@ function retry(func, attempts) {
  *
  */
 function logger(func, logFunc) {
-    throw new Error('Not implemented');
+  return function() {
+    const args = Array.from(arguments);
+    let str = JSON.stringify(args).slice(1, -1);
+    str = func.name + "(" + str + ")";
+    logFunc(str + " starts");
+    const result = func.apply(this, args);
+    logFunc(str + " ends");
+    return result;
+  };
 }
-
 
 /**
  * Return the function with partial applied arguments
@@ -150,9 +170,11 @@ function logger(func, logFunc) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn) {
-    throw new Error('Not implemented');
+  const args = Array.from(arguments).slice(1);
+  return function() {
+    return args.concat(Array.from(arguments)).join("");
+  };
 }
-
 
 /**
  * Returns the id generator function that returns next integer starting from specified number every time when invoking.
@@ -171,17 +193,16 @@ function partialUsingArguments(fn) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
-    throw new Error('Not implemented');
+  return () => startFrom++;
 }
 
-
 module.exports = {
-    getComposition: getComposition,
-    getPowerFunction: getPowerFunction,
-    getPolynom: getPolynom,
-    memoize: memoize,
-    retry: retry,
-    logger: logger,
-    partialUsingArguments: partialUsingArguments,
-    getIdGeneratorFunction: getIdGeneratorFunction,
+  getComposition: getComposition,
+  getPowerFunction: getPowerFunction,
+  getPolynom: getPolynom,
+  memoize: memoize,
+  retry: retry,
+  logger: logger,
+  partialUsingArguments: partialUsingArguments,
+  getIdGeneratorFunction: getIdGeneratorFunction
 };
