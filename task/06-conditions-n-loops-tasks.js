@@ -177,7 +177,7 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-  for (var i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     if (str.indexOf(str[i]) === i && str.lastIndexOf(str[i]) === i)
       return str[i];
   }
@@ -326,7 +326,7 @@ function isBracketsBalanced(str) {
   const result = [];
   const openBrackets = ["(", "[", "{", "<"];
   const closeBrackets = [")", "]", "}", ">"];
-  for (var i of str) {
+  for (let i of str) {
     if (openBrackets.indexOf(i) > -1) result.push(i);
     else if (
       closeBrackets.indexOf(i) ===
@@ -428,7 +428,23 @@ function toNaryString(num, n) {
  *   ['/web/favicon.ico', '/web-scripts/dump', '/webalizer/logs'] => '/'
  */
 function getCommonDirectoryPath(pathes) {
-  throw new Error("Not implemented");
+  let coincidence;
+  const directory = [];
+  for (let i = 0, len = pathes[0].length; i < len; i++) {
+    coincidence = true;
+    for (let j = 0; j < pathes.length - 1; j++) {
+      if (pathes[j][i] !== pathes[j + 1][i]) {
+        coincidence = false;
+        break;
+      }
+    }
+    if (coincidence) {
+      directory.push(pathes[0][i]);
+    } else {
+      let lastSlash = directory.lastIndexOf("/");
+      return directory.slice(0, lastSlash + 1).join("");
+    }
+  }
 }
 
 /**
@@ -495,7 +511,27 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-  throw new Error("Not implemented");
+  const winPos = [
+    [[0, 0], [0, 1], [0, 2]],
+    [[1, 0], [1, 1], [1, 2]],
+    [[2, 0], [2, 1], [2, 2]],
+    [[0, 0], [1, 0], [2, 0]],
+    [[0, 1], [1, 1], [2, 1]],
+    [[0, 2], [1, 2], [2, 2]],
+    [[0, 0], [1, 1], [2, 2]],
+    [[0, 2], [1, 1], [2, 0]]
+  ];
+
+  for (let i of winPos) {
+    if (
+      position[i[0][0]][i[0][1]] &&
+      position[i[0][0]][i[0][1]] === position[i[1][0]][i[1][1]] &&
+      position[i[0][0]][i[0][1]] === position[i[2][0]][i[2][1]]
+    ) {
+      return position[i[0][0]][i[0][1]];
+    }
+  }
+  return undefined;
 }
 
 module.exports = {
