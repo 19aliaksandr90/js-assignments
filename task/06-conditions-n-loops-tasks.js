@@ -29,13 +29,10 @@
  *
  */
 function getFizzBuzz(num) {
-  return num % 15 == 0
-    ? "FizzBuzz"
-    : num % 3 == 0
-    ? "Fizz"
-    : num % 5 == 0
-    ? "Buzz"
-    : num;
+  if (num % 15 == 0) return "FizzBuzz";
+  else if (num % 3 == 0) return "Fizz";
+  else if (num % 5 == 0) return "Buzz";
+  else return num;
 }
 
 /**
@@ -70,7 +67,9 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-  return ((n1 + n2) * (n2 - n1 + 1)) / 2;
+  const sumNum = n1 + n2;
+  const difNum = n2 - n1 + 1;
+  return (sumNum * difNum) / 2;
 }
 
 /**
@@ -327,13 +326,16 @@ function isBracketsBalanced(str) {
   const openBrackets = ["(", "[", "{", "<"];
   const closeBrackets = [")", "]", "}", ">"];
   for (let i of str) {
-    if (openBrackets.indexOf(i) > -1) result.push(i);
-    else if (
+    if (openBrackets.indexOf(i) > -1) {
+      result.push(i);
+    } else if (
       closeBrackets.indexOf(i) ===
       openBrackets.indexOf(result[result.length - 1])
-    )
+    ) {
       result.pop();
-    else result.push(i);
+    } else {
+      result.push(i);
+    }
   }
   return !result.length;
 }
@@ -511,27 +513,45 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-  const winPos = [
-    [[0, 0], [0, 1], [0, 2]],
-    [[1, 0], [1, 1], [1, 2]],
-    [[2, 0], [2, 1], [2, 2]],
-    [[0, 0], [1, 0], [2, 0]],
-    [[0, 1], [1, 1], [2, 1]],
-    [[0, 2], [1, 2], [2, 2]],
-    [[0, 0], [1, 1], [2, 2]],
-    [[0, 2], [1, 1], [2, 0]]
-  ];
-
-  for (let i of winPos) {
+  for (let i = 0; i < 3; i++) {
     if (
-      position[i[0][0]][i[0][1]] &&
-      position[i[0][0]][i[0][1]] === position[i[1][0]][i[1][1]] &&
-      position[i[0][0]][i[0][1]] === position[i[2][0]][i[2][1]]
+      // horizontal winning situation
+      position[i][0] != undefined &&
+      position[i][0] == position[i][1] &&
+      position[i][0] == position[i][2]
     ) {
-      return position[i[0][0]][i[0][1]];
+      return position[i][0];
+    }
+
+    if (
+      // vertical winning situation
+      position[0][i] != undefined &&
+      position[0][i] == position[1][i] &&
+      position[0][i] == position[2][i]
+    ) {
+      return position[0][i];
     }
   }
-  return undefined;
+
+  if (
+    // diagonal winning situation
+    position[0][0] != undefined &&
+    position[0][0] == position[1][1] &&
+    position[0][0] == position[2][2]
+  ) {
+    return position[0][0];
+  }
+
+  if (
+    //diagonal winning situation
+    position[0][2] != undefined &&
+    position[0][2] == position[1][1] &&
+    position[0][2] == position[2][0]
+  ) {
+    return position[0][2];
+  }
+
+  return undefined; //draw situation
 }
 
 module.exports = {
