@@ -113,8 +113,20 @@ function getRegexForSSN() {
  *   'Pa55'.match(validator) => false
  */
 function getPasswordValidator(minLength) {
+  const upperCaseSymbol = "(?=.*[A-Z])";
+  const lowerCaseSymbol = "(?=.*[a-z])";
+  const needSymbol = "(?=.*\\d)";
+  const allowedSymbolsForPassword = "[A-Za-z\\d]";
+  const passwordLimit = "{" + minLength + ",}";
+
   return new RegExp(
-    "^(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*[0-9]+)[a-zA-Z0-9]{" + minLength + ",}$"
+    "^" +
+      lowerCaseSymbol +
+      upperCaseSymbol +
+      needSymbol +
+      allowedSymbolsForPassword +
+      passwordLimit +
+      "$"
   );
 }
 
