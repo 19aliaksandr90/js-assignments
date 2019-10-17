@@ -516,18 +516,18 @@ function evaluateTicTacToePosition(position) {
   for (let i = 0; i < 3; i++) {
     if (
       // horizontal winning situation
-      position[i][0] != undefined &&
-      position[i][0] == position[i][1] &&
-      position[i][0] == position[i][2]
+      position[i][0] !== undefined &&
+      position[i][0] === position[i][1] &&
+      position[i][0] === position[i][2]
     ) {
       return position[i][0];
     }
 
     if (
       // vertical winning situation
-      position[0][i] != undefined &&
-      position[0][i] == position[1][i] &&
-      position[0][i] == position[2][i]
+      position[0][i] !== undefined &&
+      position[0][i] === position[1][i] &&
+      position[0][i] === position[2][i]
     ) {
       return position[0][i];
     }
@@ -535,18 +535,18 @@ function evaluateTicTacToePosition(position) {
 
   if (
     // diagonal winning situation
-    position[0][0] != undefined &&
-    position[0][0] == position[1][1] &&
-    position[0][0] == position[2][2]
+    position[0][0] !== undefined &&
+    position[0][0] === position[1][1] &&
+    position[0][0] === position[2][2]
   ) {
     return position[0][0];
   }
 
   if (
     //diagonal winning situation
-    position[0][2] != undefined &&
-    position[0][2] == position[1][1] &&
-    position[0][2] == position[2][0]
+    position[0][2] !== undefined &&
+    position[0][2] === position[1][1] &&
+    position[0][2] === position[2][0]
   ) {
     return position[0][2];
   }
